@@ -1,0 +1,10 @@
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.deps.json
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.AssemblyReference.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.AssemblyInfoInputs.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.AssemblyInfo.cs
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.CoreCompileInputs.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.pdb
