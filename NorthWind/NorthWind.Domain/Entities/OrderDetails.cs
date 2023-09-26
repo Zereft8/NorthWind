@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using NorthWind.Domain.Core;
 
 namespace NorthWind.Domain.Entities
 {
-    internal class OrderDetails
+    internal class OrderDetails : BaseEntity
     {
+        public int OrderID { get; set; }
+        public int ProductID { get; set; }
+        public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
+        public int Discount { get; set; }
+
     }
 }
