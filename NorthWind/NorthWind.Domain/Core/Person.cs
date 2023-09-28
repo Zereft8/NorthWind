@@ -1,4 +1,7 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace NorthWind.Domain.Core
 {
     public abstract class Person : Info
