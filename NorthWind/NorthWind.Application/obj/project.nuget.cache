@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y73Diy0wab3edErkkqNcJQmiHGwaQruQpllXLYx1B84UKz6cvX/z7Sv2P0WT/onhWjf051/I0NfKPYAU4VY/g==",
+  "dgSpecHash": "RCPqVAV7xOOYlnxLQcBk2Lhc/kRnk2ruo6POolYU/OCwLWMsV/DPEVggo3vLdMgsOkDbQSLO0WA3H/gE70urNA==",
   "success": true,
-  "projectFilePath": "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
+  "projectFilePath": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
