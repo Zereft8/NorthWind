@@ -10,6 +10,6 @@ namespace NorthWind.Infrastructure.Context
 
         }
 
-        public DbSet<Customers> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

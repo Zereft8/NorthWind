@@ -1,35 +1,47 @@
 ﻿
 using NorthWind.Domain.Entities;
+using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NorthWind.Infrastructure.Repositories
 {
     public class CustomersRepository : ICustomersRepository
     {
-        public List<Customers> GetEntities()
+
+        private readonly NorthWindContext context;
+
+        public CustomersRepository(NorthWindContext context) 
         {
-            throw new System.NotImplementedException();
+
+            this.context = context;
+        
         }
 
-        public Customers GetEntity(int Id)
+        public List<Customer> GetEntities()
         {
-            throw new System.NotImplementedException();
+            return this.context.Customers.Where(cm => !cm.Eliminado).ToList();
         }
 
-        public void Remove(Customers entity)
+        public Customer GetEntity(string Id)
         {
-            throw new System.NotImplementedException();
+            return this.context.Customers.Find(Id);
         }
 
-        public void Save(Customers entity)
+        public void Remove(Customer entity)
         {
-            throw new System.NotImplementedException();
+            this.context.Customers.Remove(entity);
         }
 
-        public void Update(Customers entity)
+        public void Save(Customer entity)
         {
-            throw new System.NotImplementedException();
+            this.context.Customers.Add(entity);
+        }
+
+        public void Update(Customer entity)
+        {
+            this.context.Customers.Update(entity);
         }
     }
 }
