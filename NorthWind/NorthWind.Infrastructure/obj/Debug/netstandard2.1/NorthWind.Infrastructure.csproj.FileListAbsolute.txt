@@ -1,0 +1,13 @@
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\bin\Debug\netstandard2.1\NorthWind.Infrastructure.deps.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\bin\Debug\netstandard2.1\NorthWind.Infrastructure.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\bin\Debug\netstandard2.1\NorthWind.Infrastructure.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.AssemblyInfo.cs
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.csproj.CopyComplete
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Infrastructure\obj\Debug\netstandard2.1\NorthWind.Infrastructure.pdb

@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NorthWind",
+    "\\NorthWind\\NorthWind.Domain",
+    "\\NorthWind\\NorthWind.Domain\\Repository",
+    "\\NorthWind\\NorthWind.Infrastructure",
+    "\\NorthWind\\NorthWind.Infrastructure\\Context",
+    "\\NorthWind\\NorthWind.Infrastructure\\Interfaces",
+    "\\NorthWind\\NorthWind.Infrastructure\\Repositories"
   ],
-  "SelectedNode": "\\NorthWind.sln",
+  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\Repository",
   "PreviewInSolutionExplorer": false
 }

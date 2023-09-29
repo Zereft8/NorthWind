@@ -8,3 +8,12 @@ C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.CoreCompileInputs.cache
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.dll
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.deps.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.AssemblyInfoInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.AssemblyInfo.cs
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.CoreCompileInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.pdb

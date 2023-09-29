@@ -2,12 +2,15 @@
 using NorthWind.Domain.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace NorthWind.Infrastructure.Interfaces
 {
-    public interface ISuppliersRepository : IBaseRepository<Suppliers>
+    public interface ISuppliersRepository : IBaseRepository<Supplier>
     {
-        List<Suppliers> GetSuppliersBySupplierID(int supplierID);
+        List<Supplier> GetSuppliersBySupplierID(int supplierID);
+
+        bool Exists(Expression<Func<Supplier, bool>> filter);
     }
 }

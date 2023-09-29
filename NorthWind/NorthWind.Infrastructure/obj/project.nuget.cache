@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yrjaL14hLhdls8aIsrMCxC2BXXMvqS5SnyZAzRu4sI8JpTeYCLGHJ+jU3K0Na4HiuPRfvYHXsIg2cHvTC4ar9g==",
+  "dgSpecHash": "0R9m4FtpaFflmj9X3zHM6SUxFUKSDkoSVAe7OB1x2CFBHHrPnAylqaEPZlxeRHxDAAWbOmS+N/7+UwaPzLCyDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\theka\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\theka\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

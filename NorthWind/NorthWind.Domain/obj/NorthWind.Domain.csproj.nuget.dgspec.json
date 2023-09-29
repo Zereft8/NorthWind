@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {}
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
         "projectName": "NorthWind.Domain",
-        "projectPath": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+        "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
         "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Domain\\obj\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",

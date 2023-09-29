@@ -1,41 +1,57 @@
-﻿using NorthWind.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using NorthWind.Domain.Entities;
+using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace NorthWind.Infrastructure.Repositories
 {
-    public class SuppliersRepository : ISuppliersRepository
+    public class SuppliersRepository : ISuppliersRepository 
     {
-        public List<Suppliers> GetSuppliersBySupplierID(int supplierID)
+        private readonly NorthWindContext context;
+
+        public SuppliersRepository(NorthWindContext context) 
+        {
+            this.context = context;
+        }
+
+        public List<Supplier> GetSuppliersBySupplierID(int SupplierID)
         {
             throw new NotImplementedException();
         }
 
-        public List<Suppliers> GetEntities()
+        public List<Supplier> GetEntities()
         {
-            throw new NotImplementedException();
+            return this.context.Suppliers.Where(st => !st.Eliminado).ToList();
         }
 
-        public Suppliers GetEntity(int Id)
+        public Supplier GetEntity(int SupplierID)
         {
-            throw new NotImplementedException();
+            return this.context.Suppliers.Find(SupplierID);
         }
 
-        public void Remove(Suppliers entity)
+        public void Remove(Supplier entity)
         {
-            throw new NotImplementedException();
+            this.context.Suppliers.Remove(entity);
         }
 
-        public void Save(Suppliers entity)
+        public void Save(Supplier entity)
         {
-            throw new NotImplementedException();
+            this.context.Suppliers.Add(entity);
         }
 
-        public void Update(Suppliers entity)
+        public void Update(Supplier entity)
         {
-            throw new NotImplementedException();
+           this.context.Suppliers.Update(entity);
+        }
+
+        public bool Exists(Expression<Func<Supplier, bool>> filter)
+        {
+            return this.context.Suppliers.Any(filter);
         }
     }
 }
