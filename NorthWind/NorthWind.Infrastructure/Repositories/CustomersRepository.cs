@@ -24,7 +24,7 @@ namespace NorthWind.Infrastructure.Repositories
             return this.context.Customers.Where(cm => !cm.Eliminado).ToList();
         }
 
-        public Customer GetEntity(string Id)
+        public Customer GetEntity(int Id)
         {
             return this.context.Customers.Find(Id);
         }
