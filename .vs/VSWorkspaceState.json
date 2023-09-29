@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\NorthWind",
-    "\\NorthWind\\NorthWind.Domain"
+    ""
   ],
-  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+  "SelectedNode": "\\NorthWind.sln",
   "PreviewInSolutionExplorer": false
 }
