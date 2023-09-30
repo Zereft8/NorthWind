@@ -17,15 +17,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{387F30EC-C23
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ioc", "Ioc", "{AC33447E-B8B7-4049-8CDC-EDF5AA76CFE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Infrastructure", "NorthWind.Infrastructure\NorthWind.Infrastructure.csproj", "{BA123DD6-4DE3-4165-970B-4726D066CE15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Infrastructure", "NorthWind.Infrastructure\NorthWind.Infrastructure.csproj", "{BA123DD6-4DE3-4165-970B-4726D066CE15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Application", "NorthWind.Application\NorthWind.Application.csproj", "{BE24F28A-1E5F-48B9-B8B2-8B5371AF5796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Application", "NorthWind.Application\NorthWind.Application.csproj", "{BE24F28A-1E5F-48B9-B8B2-8B5371AF5796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Ioc", "NorthWind.Ioc\NorthWind.Ioc.csproj", "{C1542493-6213-4681-8AC3-D4FE9B065EC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Ioc", "NorthWind.Ioc\NorthWind.Ioc.csproj", "{C1542493-6213-4681-8AC3-D4FE9B065EC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Web", "NorthWind.Web\NorthWind.Web.csproj", "{D36DF24F-4A52-4843-BB74-8C1A31CFF0D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Web", "NorthWind.Web\NorthWind.Web.csproj", "{D36DF24F-4A52-4843-BB74-8C1A31CFF0D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Api", "NorthWind.Api\NorthWind.Api.csproj", "{D96A97C8-A42F-424D-A544-D28C90025EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Api", "NorthWind.Api\NorthWind.Api.csproj", "{D96A97C8-A42F-424D-A544-D28C90025EC3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B6779BDA-85CA-4544-A3F1-2B87915FBCA9} = {B6779BDA-85CA-4544-A3F1-2B87915FBCA9}
+		{BA123DD6-4DE3-4165-970B-4726D066CE15} = {BA123DD6-4DE3-4165-970B-4726D066CE15}
+		{BE24F28A-1E5F-48B9-B8B2-8B5371AF5796} = {BE24F28A-1E5F-48B9-B8B2-8B5371AF5796}
+		{C1542493-6213-4681-8AC3-D4FE9B065EC8} = {C1542493-6213-4681-8AC3-D4FE9B065EC8}
+		{D36DF24F-4A52-4843-BB74-8C1A31CFF0D4} = {D36DF24F-4A52-4843-BB74-8C1A31CFF0D4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

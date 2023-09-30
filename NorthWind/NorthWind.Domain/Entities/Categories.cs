@@ -2,7 +2,7 @@
 
 namespace NorthWind.Domain.Entities
 {
-    internal class Categories : BaseEntity
+    public class Categories : BaseEntity
     {
         public int CategoryID { get; set; } 
         public string CategoryName { get; set; } = string.Empty;

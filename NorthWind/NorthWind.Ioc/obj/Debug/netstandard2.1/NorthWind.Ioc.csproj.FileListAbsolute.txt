@@ -1,0 +1,10 @@
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.deps.json
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.pdb
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.AssemblyReference.cache
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.AssemblyInfoInputs.cache
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.AssemblyInfo.cs
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.pdb

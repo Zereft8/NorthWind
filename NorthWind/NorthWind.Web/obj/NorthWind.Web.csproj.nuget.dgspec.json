@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {}
+    "C:\\Users\\Sebas\\Desktop\\Itla\\Cuarto cuatrimestre\\Programacion 222\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {}
   },
   "projects": {
-    "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {
+    "C:\\Users\\Sebas\\Desktop\\Itla\\Cuarto cuatrimestre\\Programacion 222\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Sebas\\Desktop\\Itla\\Cuarto cuatrimestre\\Programacion 222\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj",
         "projectName": "NorthWind.Web",
-        "projectPath": "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj",
-        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Web\\obj\\",
+        "projectPath": "C:\\Users\\Sebas\\Desktop\\Itla\\Cuarto cuatrimestre\\Programacion 222\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj",
+        "packagesPath": "C:\\Users\\Sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sebas\\Desktop\\Itla\\Cuarto cuatrimestre\\Programacion 222\\NorthWind\\NorthWind\\NorthWind.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,14 +39,27 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

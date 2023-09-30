@@ -2,7 +2,7 @@
 
 namespace NorthWind.Domain.Entities
 {
-    internal class OrderDetails : BaseEntity
+    public class OrderDetails : BaseEntity
     {
         public int OrderID { get; set; }
         public int ProductID { get; set; }
