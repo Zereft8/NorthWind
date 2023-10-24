@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using NorthWind.Domain.Repository;
 using NorthWind.Infrastructure.Context;
-using NorthWind.Infrastructure.Interfaces;
 using NorthWind.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

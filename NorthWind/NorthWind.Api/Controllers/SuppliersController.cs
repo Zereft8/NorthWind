@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NorthWind.Api.Models.Modules.Suppliers;
 using NorthWind.Domain.Entities;
-using NorthWind.Infrastructure.Interfaces;
+using NorthWind.Domain.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,7 +10,7 @@ namespace NorthWind.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-   
+
     public class SuppliersController : ControllerBase
     {
         private readonly ISuppliersRepository suppliersRepository;
@@ -19,30 +20,84 @@ namespace NorthWind.Api.Controllers
             this.suppliersRepository = suppliersRepository;
         }
         // GET: api/<SuppliersController>
-        [HttpGet]
-        public IEnumerable<Supplier> Get()
+        [HttpGet("GetSuppliers")]
+        public IActionResult Get()
         {
-            var supplier = this.suppliersRepository.GetEntities();
-            return supplier;
+            var supplier = this.suppliersRepository.GetEntities()
+                                                   .Select(st => new GetSupplierModel()
+                                                   {
+                                                       CompanyName = st.CompanyName,
+                                                       ContactName = st.ContactName,
+                                                       ContactTitle = st.ContactTitle,
+                                                       Address = st.Address,
+                                                       Country = st.Country,
+                                                       FechaRegistro = st.FechaRegistro,
+                                                       Phone = st.Phone,
+                                                       IdUsuarioCreacion = st.IdUsuarioCreacion,
+                                                       SupplierId = st.SupplierID
+
+
+                                                   });
+            return Ok(supplier);
         }
 
         // GET api/<SuppliersController>/5
-        [HttpGet("{id}")]
-        public Supplier Get(int SupplierID)
+        [HttpGet("GetSupplier")]
+        public IActionResult Get(int SupplierID)
         {
-            return this.suppliersRepository.GetEntity(SupplierID);
+            var supplier = this.suppliersRepository.GetEntity(SupplierID);
+            GetSupplierModel suppliermodel = new GetSupplierModel()
+            {
+                CompanyName = supplier.CompanyName, 
+                ContactName = supplier.ContactName,
+                ContactTitle = supplier.ContactTitle,
+                Address = supplier.Address,
+                Country = supplier.Country,
+                FechaRegistro = supplier.FechaRegistro,
+                Phone = supplier.Phone,
+                IdUsuarioCreacion= supplier.IdUsuarioCreacion,
+                SupplierId= supplier.SupplierID
+            };    
+            return Ok(suppliermodel);
         }
 
         // POST api/<SuppliersController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("SaveSupplier")]
+        public IActionResult Post([FromBody] AddSuppliersModel addSuppliers)
         {
+            this.suppliersRepository.Save(new Supplier() 
+            {
+                CompanyName = addSuppliers.CompanyName,
+                ContactName = addSuppliers.ContactName,
+                ContactTitle = addSuppliers.ContactTitle,
+                Address = addSuppliers.Address,
+                Country = addSuppliers.Country,
+                Phone = addSuppliers.Phone,
+                IdUsuarioCreacion = addSuppliers.IdUsuarioCreacion,
+                FechaRegistro = addSuppliers.FechaRegistro,
+            });
+            return Ok(addSuppliers);
         }
 
         // PUT api/<SuppliersController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+        [HttpPut("UpdateSupplier")]
+        public IActionResult Put([FromBody] UpdateSuppliersModel updateSuppliers)
+        { 
+            this.suppliersRepository.Update(new Supplier()
+            {
+                CompanyName = updateSuppliers.CompanyName,
+                ContactName = updateSuppliers.ContactName,
+                ContactTitle = updateSuppliers.ContactTitle,
+                Address = updateSuppliers.Address,
+                City    = updateSuppliers.City,
+                Country = updateSuppliers.Country,
+                Phone = updateSuppliers.Phone,
+                IdUsuarioMod = updateSuppliers.IdUsuarioMod,
+                FechaMod = updateSuppliers.FechaMod,
+                SupplierID = updateSuppliers.SupplierID,
+
+            });
+            return Ok(updateSuppliers);
         }
 
         // DELETE api/<SuppliersController>/5

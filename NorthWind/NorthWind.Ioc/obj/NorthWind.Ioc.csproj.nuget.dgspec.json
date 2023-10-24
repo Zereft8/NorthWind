@@ -11,7 +11,7 @@
         "projectName": "NorthWind.Ioc",
         "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj",
         "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theka\\Source\\Repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\obj\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

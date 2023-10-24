@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
 using NorthWind.Domain.Entities;
+using NorthWind.Domain.Repository;
 using NorthWind.Infrastructure.Context;
-using NorthWind.Infrastructure.Interfaces;
+using NorthWind.Infrastructure.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,48 +11,39 @@ using System.Text;
 
 namespace NorthWind.Infrastructure.Repositories
 {
-    public class SuppliersRepository : ISuppliersRepository 
+    public class SuppliersRepository : BaseRepository<Supplier> ,ISuppliersRepository
     {
         private readonly NorthWindContext context;
 
-        public SuppliersRepository(NorthWindContext context) 
+        public SuppliersRepository(NorthWindContext context) : base(context) 
         {
             this.context = context;
-        }
 
-        public List<Supplier> GetSuppliersBySupplierID(int SupplierID)
-        {
-            throw new NotImplementedException();
         }
+        public List<Supplier> GetSuppliersBySuppliersID(int SupplierID)
+            {
+                throw new NotImplementedException();
+            }
 
-        public List<Supplier> GetEntities()
+        public override void Save(Supplier entity)
         {
-            return this.context.Suppliers.Where(st => !st.Eliminado).ToList();
+            context.Suppliers.Add(entity);
+            context.SaveChanges();
         }
-
-        public Supplier GetEntity(int SupplierID)
+        public override void Update(Supplier entity)
         {
-            return this.context.Suppliers.Find(SupplierID);
-        }
-
-        public void Remove(Supplier entity)
-        {
-            this.context.Suppliers.Remove(entity);
-        }
-
-        public void Save(Supplier entity)
-        {
-            this.context.Suppliers.Add(entity);
-        }
-
-        public void Update(Supplier entity)
-        {
-           this.context.Suppliers.Update(entity);
-        }
-
-        public bool Exists(Expression<Func<Supplier, bool>> filter)
-        {
-            return this.context.Suppliers.Any(filter);
+            var supplierToUpdate = base.GetEntity(entity.SupplierID);
+            supplierToUpdate.CompanyName = entity.CompanyName;
+            supplierToUpdate.Address = entity.Address;
+            supplierToUpdate.Country = entity.Country;
+            supplierToUpdate.ContactName = entity.ContactName;
+            supplierToUpdate.City = entity.City;
+            supplierToUpdate.Phone = entity.Phone;
+            supplierToUpdate.FechaMod = entity.FechaMod;
+            supplierToUpdate.IdUsuarioMod = entity.IdUsuarioMod;
+            supplierToUpdate.SupplierID = entity.SupplierID;
+            context.Suppliers.Update(supplierToUpdate);
+            context.SaveChanges();
         }
     }
 }
