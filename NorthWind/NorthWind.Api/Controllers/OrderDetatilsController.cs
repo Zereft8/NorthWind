@@ -34,25 +34,5 @@ namespace NorthWind.Api.Controllers
             return orderDetail;
         }
 
-        // POST: CategoriesController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public void Create(IFormCollection collection)
-        {
-
-        }
-        // POST: CategoriesController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public void Edit(int id, IFormCollection collection)
-        {
-
-        }
-
-        // GET: CategoriesController/Delete/5
-        public void Delete(int id)
-        {
-
-        }
     }
 }

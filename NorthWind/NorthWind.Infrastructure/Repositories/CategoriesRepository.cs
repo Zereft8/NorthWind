@@ -3,6 +3,7 @@ using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NorthWind.Infrastructure.Repositories
 {
@@ -19,7 +20,7 @@ namespace NorthWind.Infrastructure.Repositories
 
         public List<Categories> GetEntities()
         {
-            return this.context.Categories.Where(cm => !cm.Eliminado).ToList();
+            return this.context.Categories.ToList();
         }
 
         public Categories GetEntity(int Id)
@@ -30,6 +31,14 @@ namespace NorthWind.Infrastructure.Repositories
         public void Remove(Categories entity)
         {
             this.context.Categories.Remove(entity);
+        }
+        public virtual async Task<bool> DeleteCategory(int Id)
+        {
+            var category = this.context.Categories.Find(Id);
+            if(category != null)
+                this.context.Categories.Remove(category);
+            await this.context.SaveChangesAsync();
+            return true;
         }
 
         public void Save(Categories entity)

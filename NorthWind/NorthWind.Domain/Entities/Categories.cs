@@ -1,12 +1,18 @@
-﻿using NorthWind.Domain.Core;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NorthWind.Domain.Entities
+public class Categories
 {
-    public class Categories : BaseEntity
-    {
-        public int CategoryID { get; set; } 
-        public string CategoryName { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public byte[]? Picture { get; set; }
-    }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int CategoryID { get; set; }
+
+    [Required]
+    [StringLength(15)]
+    public string CategoryName { get; set; } = string.Empty;
+
+    public string Description { get; set; } = string.Empty;
+
+    public byte[]? Picture { get; set; }
 }

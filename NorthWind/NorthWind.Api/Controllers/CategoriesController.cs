@@ -34,26 +34,20 @@ namespace NorthWind.Api.Controllers
             return category;
         }
 
-        // POST: CategoriesController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public void Create(IFormCollection collection)
-        {
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteCategory(int id)
+        //{
+        //    var deletionResult = await this.categoriesRepositry.DeleteCategory(id);
 
-        }
-        // POST: CategoriesController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public void Edit(int id, IFormCollection collection)
-        {
-
-        }
-
-        // GET: CategoriesController/Delete/5
-        public void Delete(int id)
-        {
-           
-        }
+        //    if (deletionResult)
+        //    {
+        //        return Ok();
+        //    }
+        //    else
+        //    {
+        //        return StatusCode(500);
+        //    }
+        //}
 
     }
 }

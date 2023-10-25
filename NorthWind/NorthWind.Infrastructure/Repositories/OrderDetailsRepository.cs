@@ -19,12 +19,17 @@ namespace NorthWind.Infrastructure.Repositories
 
         public List<OrderDetails> GetEntities()
         {
-            return this.context.OrderDetails.Where(cm => !cm.Eliminado).ToList();
+            return this.context.OrderDetails.ToList();
         }
 
-        public OrderDetails GetEntity(int Id)
+        public OrderDetails GetEntity(int orderID)
         {
-            return this.context.OrderDetails.Find(Id);
+            return this.context.OrderDetails.Find(orderID);
+        }
+        public OrderDetails GetEntitiesById(int orderID, int productID)
+        {
+            var entities = this.context.OrderDetails.Find(orderID, productID);
+            return entities;
         }
 
         public void Remove(OrderDetails entity)
