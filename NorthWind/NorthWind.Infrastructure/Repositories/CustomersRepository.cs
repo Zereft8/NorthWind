@@ -1,47 +1,51 @@
 ﻿
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Context;
+using NorthWind.Infrastructure.Core;
 using NorthWind.Infrastructure.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
+
 
 namespace NorthWind.Infrastructure.Repositories
 {
-    public class CustomersRepository : ICustomersRepository
+    public class CustomersRepository : BaseRepository<Customer,string> ,ICustomersRepository
     {
 
         private readonly NorthWindContext context;
 
-        public CustomersRepository(NorthWindContext context) 
+        public CustomersRepository(NorthWindContext context): base(context) 
         {
 
             this.context = context;
         
         }
 
-        public List<Customer> GetEntities()
+        public override void Save(Customer entity)
         {
-            return this.context.Customers.Where(cm => !cm.Eliminado).ToList();
+            context.Customers.Add(entity);
+            context.SaveChanges();
         }
 
-        public Customer GetEntity(int Id)
+        public override void Update(Customer entity)
         {
-            return this.context.Customers.Find(Id);
+            var customerToUpdae = base.GetEntity(entity.CustomerID);
+
+            customerToUpdae.CompanyName = entity.CompanyName;
+            customerToUpdae.ContactName = entity.ContactName;
+            customerToUpdae.ContactTitle = entity.ContactTitle;
+            customerToUpdae.Address = entity.Address;
+            customerToUpdae.City = entity.City;
+            customerToUpdae.Region = entity.Region;
+            customerToUpdae.PostalCode = entity.PostalCode;
+            customerToUpdae.Country = entity.Country;
+            customerToUpdae.Phone = entity.Phone;
+            customerToUpdae.Fax = entity.Fax;
+            customerToUpdae.FechaMod= entity.FechaMod;
+            customerToUpdae.IdUsuarioMod= entity.IdUsuarioMod;
+            customerToUpdae.CustomerID = entity.CustomerID;
+
+            context.Customers.Update(customerToUpdae);
+            context.SaveChanges();
         }
 
-        public void Remove(Customer entity)
-        {
-            this.context.Customers.Remove(entity);
-        }
-
-        public void Save(Customer entity)
-        {
-            this.context.Customers.Add(entity);
-        }
-
-        public void Update(Customer entity)
-        {
-            this.context.Customers.Update(entity);
-        }
     }
 }
