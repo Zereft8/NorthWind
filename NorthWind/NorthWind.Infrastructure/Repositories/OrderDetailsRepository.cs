@@ -40,7 +40,7 @@ namespace NorthWind.Infrastructure.Repositories
         public void Save(OrderDetails entity)
         {
             this.context.OrderDetails.Add(entity);
-        }
+        } 
 
         public void Update(OrderDetails entity)
         {
