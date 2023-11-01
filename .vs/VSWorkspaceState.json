@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\NorthWind",
-    "\\NorthWind\\NorthWind.Domain"
+    "\\NorthWind\\NorthWind.Domain",
+    "\\NorthWind\\NorthWind.Domain\\bin",
+    "\\NorthWind\\NorthWind.Domain\\Core",
+    "\\NorthWind\\NorthWind.Domain\\Entities",
+    "\\NorthWind\\NorthWind.Domain\\Repository",
+    "\\NorthWind\\NorthWind.Ioc"
   ],
-  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\Core\\BaseEntity.cs",
   "PreviewInSolutionExplorer": false
 }
