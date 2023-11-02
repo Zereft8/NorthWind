@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\NorthWind.Domain",
+    "\\NorthWind.Domain\\Entities",
+    "\\NorthWind.Domain\\obj",
+    "\\NorthWind.Domain\\Repository",
+    "\\NorthWind.Infrastructure",
+    "\\NorthWind.Infrastructure\\Interfaces",
+    "\\NorthWind.Infrastructure\\Repositories"
+  ],
+  "SelectedNode": "\\NorthWind.Infrastructure\\Repositories\\OrdersRepository.cs",
+  "PreviewInSolutionExplorer": false
+}
