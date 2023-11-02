@@ -3,12 +3,13 @@
     "",
     "\\NorthWind",
     "\\NorthWind\\NorthWind.Domain",
-    "\\NorthWind\\NorthWind.Domain\\bin",
     "\\NorthWind\\NorthWind.Domain\\Core",
     "\\NorthWind\\NorthWind.Domain\\Entities",
-    "\\NorthWind\\NorthWind.Domain\\Repository",
-    "\\NorthWind\\NorthWind.Ioc"
+    "\\NorthWind\\NorthWind.Infrastructure",
+    "\\NorthWind\\NorthWind.Infrastructure\\Context",
+    "\\NorthWind\\NorthWind.Infrastructure\\Interfaces",
+    "\\NorthWind\\NorthWind.Infrastructure\\Repositories"
   ],
-  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\Core\\BaseEntity.cs",
+  "SelectedNode": "\\NorthWind\\NorthWind.Domain\\Core",
   "PreviewInSolutionExplorer": false
 }

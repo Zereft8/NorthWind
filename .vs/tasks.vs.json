@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarea-Repository",
+      "appliesTo": "NorthWind/NorthWind.Domain/Repository/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarea-NorthWind.Infrastructure",
+      "appliesTo": "NorthWind/NorthWind.Infrastructure/NorthWind.Infrastructure.csproj",
+      "type": "msbuild"
+    }
+  ]
+}
