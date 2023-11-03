@@ -1,5 +1,7 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace NorthWind.Domain.Repository
 {
@@ -11,6 +13,8 @@ namespace NorthWind.Domain.Repository
         void Remove (Orders orders);
         List<Orders> GetOrders();
         Orders GetOrders(int Id);
+
+        bool Exists(Expression<Func<Orders, bool>> filter);
 
 
 

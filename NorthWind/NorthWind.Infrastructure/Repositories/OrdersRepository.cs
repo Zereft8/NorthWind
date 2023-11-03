@@ -1,35 +1,58 @@
 ﻿
+using Microsoft.EntityFrameworkCore.Internal;
 using NorthWind.Domain.Entities;
+using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace NorthWind.Infrastructure.Repositories
 {
     public class OrdersRepository : IOrdersRepository
     {
-        public List<Orders> GetEntities()
+        private readonly NorthWindContext context;
+        public OrdersRepository (NorthWindContext context)
         {
-            throw new System.NotImplementedException();
+            this.context = context;
         }
+
+        public bool Exists(Expression<Func<Orders, bool>> filter)
+        {
+            return this.context.Orders.Any(filter);
+        }
+
+      
 
         public Orders GetEntity(int Id)
         {
-            throw new System.NotImplementedException();
+            return this.context.Orders.Find(Id);
         }
 
-        public void Remove(Orders entity)
+        public List<Orders> GetOrders()
         {
-            throw new System.NotImplementedException();
+            return this.context.Orders.Where(or => !or.Eliminado).ToList();
         }
 
-        public void Save(Orders entity)
+        public Orders GetOrders(int Id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void Update(Orders entity)
+        public void Remove(Orders orders)
         {
-            throw new System.NotImplementedException();
+            this.context.Orders.Remove(orders);
+        }
+
+        public void Save(Orders orders)
+        {
+            this.context.Orders.Add(orders);
+        }
+
+        public void Update(Orders orders)
+        {
+            this.context.Orders.Update(orders);
         }
     }
 }
