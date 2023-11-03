@@ -71,7 +71,8 @@ namespace NorthWind.Application.Services
                 {
                     CustomerID = dtoRemove.CustomerID,
                     Eliminado = dtoRemove.Eliminado,
-                    IdUsuarioElimino = dtoRemove.IdUsuarioElimino
+                    IdUsuarioElimino = dtoRemove.ChangeUser,
+                    FechaElimino = dtoRemove.ChangeDate
 
                 };
 
@@ -108,7 +109,8 @@ namespace NorthWind.Application.Services
                     Phone = dtoAdd.Phone,
                     Fax = dtoAdd.Fax,
                     FechaRegistro = dtoAdd.ChangeDate,
-                    IdUsuarioCreacion = dtoAdd.ChangeUser
+                    IdUsuarioCreacion = dtoAdd.ChangeUser,
+                    CustomerID = dtoAdd.CustomerID
                 };
 
                 this.customersRepository.Save(customer);
@@ -145,10 +147,11 @@ namespace NorthWind.Application.Services
                     Phone = dtoUpdate.Phone,
                     Fax = dtoUpdate.Fax,
                     FechaMod = dtoUpdate.ChangeDate,
-                    IdUsuarioMod = dtoUpdate.ChangeUser
+                    IdUsuarioMod = dtoUpdate.ChangeUser,
+                    CustomerID = dtoUpdate.CustomerID
                 };
 
-                this.customersRepository.Save(customer);
+                this.customersRepository.Update(customer);
 
                 result.Message = "Cliente actualizado satisfactoriamente";
             }
