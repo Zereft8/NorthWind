@@ -23,36 +23,39 @@ namespace NorthWind.Infrastructure.Repositories
             return this.context.Orders.Any(filter);
         }
 
-      
-
-        public Orders GetEntity(int Id)
-        {
-            return this.context.Orders.Find(Id);
-        }
-
-        public List<Orders> GetOrders()
-        {
-            return this.context.Orders.Where(or => !or.Eliminado).ToList();
-        }
-
-        public Orders GetOrders(int Id)
+        public Orders GetEntities(int OrderID, int CustomerID)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Orders orders)
+        public Orders GetEntity(int OrderID)
         {
-            this.context.Orders.Remove(orders);
+            return this.context.Orders.Find(OrderID);
         }
 
-        public void Save(Orders orders)
+        public List<Orders> GetOrders()
         {
-            this.context.Orders.Add(orders);
+            return this.context.Orders.ToList();
         }
 
-        public void Update(Orders orders)
+        public Orders GetOrders(int OrderID)
         {
-            this.context.Orders.Update(orders);
+            return this.context.Orders.Find(OrderID);
+        }
+
+        public void Remove(Orders entity)
+        {
+            this.context.Orders.Remove(entity);
+        }
+
+        public void Save(Orders entity)
+        {
+            this.context.Orders.Add(entity);
+        }
+
+        public void Update(Orders entity)
+        {
+            this.context.Orders.Update(entity);
         }
     }
 }

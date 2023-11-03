@@ -7,3 +7,4 @@ C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Ioc\obj\Debu
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.CoreCompileInputs.cache
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.dll
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.pdb
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.AssemblyReference.cache

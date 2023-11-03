@@ -17,3 +17,4 @@ C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\obj\D
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.dll
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\obj\Debug\netstandard2.1\NorthWind.Domain.csproj.AssemblyReference.cache

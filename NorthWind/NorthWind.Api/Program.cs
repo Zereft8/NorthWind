@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using NorthWind.Infrastructure.Repositories;
+using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 

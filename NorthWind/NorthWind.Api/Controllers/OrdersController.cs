@@ -29,9 +29,9 @@ namespace NorthWind.Api.Controllers
 
         // GET api/<OrdersController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Orders Get(int id)
         {
-            return "value";
+            return this.ordersRepository.GetOrders(id);
         }
 
         // POST api/<OrdersController>
