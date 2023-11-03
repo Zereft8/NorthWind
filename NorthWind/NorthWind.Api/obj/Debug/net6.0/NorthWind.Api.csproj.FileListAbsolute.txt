@@ -93,3 +93,7 @@ C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\N
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.dll
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.pdb
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Domain.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.pdb

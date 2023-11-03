@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NorthWind.Domain.Entities;
+using System;
+using System.Collections.Generic;
 
 namespace NorthWind.Infrastructure.Context
 {
@@ -11,5 +13,10 @@ namespace NorthWind.Infrastructure.Context
         }
 
         public DbSet<Supplier> Suppliers { get; set; }
+
+        internal IEnumerable<object> GetEntities()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

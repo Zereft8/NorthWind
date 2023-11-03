@@ -1,0 +1,17 @@
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.deps.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Ioc.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.AssemblyInfoInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.AssemblyInfo.cs
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.CoreCompileInputs.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Application.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Infrastructure.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Application.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Infrastructure.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.AssemblyReference.cache
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Ioc\obj\Debug\netstandard2.1\NorthWind.Ioc.csproj.CopyComplete

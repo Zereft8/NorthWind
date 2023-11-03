@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.Api.Models.Modules.Suppliers;
+using NorthWind.Application.Contracts;
+using NorthWind.Application.Dtos.Suppliers;
 using NorthWind.Domain.Entities;
 using NorthWind.Domain.Repository;
 
@@ -13,97 +15,70 @@ namespace NorthWind.Api.Controllers
 
     public class SuppliersController : ControllerBase
     {
-        private readonly ISuppliersRepository suppliersRepository;
+        private readonly ISuppliersService suppliersService;
 
-        public SuppliersController(ISuppliersRepository suppliersRepository)
+        public SuppliersController(ISuppliersService suppliersService)
         {
-            this.suppliersRepository = suppliersRepository;
+            this.suppliersService = suppliersService;
         }
         // GET: api/<SuppliersController>
         [HttpGet("GetSuppliers")]
-        public IActionResult Get()
+        public IActionResult GetSuppliers()
         {
-            var supplier = this.suppliersRepository.GetEntities()
-                                                   .Select(st => new GetSupplierModel()
-                                                   {
-                                                       CompanyName = st.CompanyName,
-                                                       ContactName = st.ContactName,
-                                                       ContactTitle = st.ContactTitle,
-                                                       Address = st.Address,
-                                                       Country = st.Country,
-                                                       FechaRegistro = st.FechaRegistro,
-                                                       Phone = st.Phone,
-                                                       IdUsuarioCreacion = st.IdUsuarioCreacion,
-                                                       SupplierId = st.SupplierID
-
-
-                                                   });
-            return Ok(supplier);
+            var result = this.suppliersService.GetAll();
+            if (!result.Success) 
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         // GET api/<SuppliersController>/5
         [HttpGet("GetSupplier")]
         public IActionResult Get(int SupplierID)
         {
-            var supplier = this.suppliersRepository.GetEntity(SupplierID);
-            GetSupplierModel suppliermodel = new GetSupplierModel()
+            var result = this.suppliersService.GetById(SupplierID);
+            if (!result.Success)
             {
-                CompanyName = supplier.CompanyName, 
-                ContactName = supplier.ContactName,
-                ContactTitle = supplier.ContactTitle,
-                Address = supplier.Address,
-                Country = supplier.Country,
-                FechaRegistro = supplier.FechaRegistro,
-                Phone = supplier.Phone,
-                IdUsuarioCreacion= supplier.IdUsuarioCreacion,
-                SupplierId= supplier.SupplierID
-            };    
-            return Ok(suppliermodel);
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         // POST api/<SuppliersController>
         [HttpPost("SaveSupplier")]
-        public IActionResult Post([FromBody] AddSuppliersModel addSuppliers)
+        public IActionResult Post([FromBody] SupplierDtoAdd addSuppliers)
         {
-            this.suppliersRepository.Save(new Supplier() 
+            var result = this.suppliersService.Save(addSuppliers);
+            if (!result.Success)
             {
-                CompanyName = addSuppliers.CompanyName,
-                ContactName = addSuppliers.ContactName,
-                ContactTitle = addSuppliers.ContactTitle,
-                Address = addSuppliers.Address,
-                Country = addSuppliers.Country,
-                Phone = addSuppliers.Phone,
-                IdUsuarioCreacion = addSuppliers.IdUsuarioCreacion,
-                FechaRegistro = addSuppliers.FechaRegistro,
-            });
-            return Ok(addSuppliers);
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         // PUT api/<SuppliersController>/5
         [HttpPut("UpdateSupplier")]
-        public IActionResult Put([FromBody] UpdateSuppliersModel updateSuppliers)
-        { 
-            this.suppliersRepository.Update(new Supplier()
+        public IActionResult Post([FromBody] SupplierDtoUpdate updateSuppliers)
+        {
+            var result = this.suppliersService.Update(updateSuppliers);
+            if (!result.Success)
             {
-                CompanyName = updateSuppliers.CompanyName,
-                ContactName = updateSuppliers.ContactName,
-                ContactTitle = updateSuppliers.ContactTitle,
-                Address = updateSuppliers.Address,
-                City    = updateSuppliers.City,
-                Country = updateSuppliers.Country,
-                Phone = updateSuppliers.Phone,
-                IdUsuarioMod = updateSuppliers.IdUsuarioMod,
-                FechaMod = updateSuppliers.FechaMod,
-                SupplierID = updateSuppliers.SupplierID,
-
-            });
-            return Ok(updateSuppliers);
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         // DELETE api/<SuppliersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("DeleteSupplier")]
+        public IActionResult Post([FromBody] SupplierDtoRemove supplierDtoRemove)
         {
+            var result = this.suppliersService.Remove(supplierDtoRemove);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
     }
 }

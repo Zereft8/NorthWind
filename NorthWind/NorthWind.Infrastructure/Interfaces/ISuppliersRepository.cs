@@ -1,4 +1,5 @@
 ﻿using NorthWind.Domain.Entities;
+using NorthWind.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -8,6 +9,8 @@ namespace NorthWind.Domain.Repository
 {
     public interface ISuppliersRepository : IBaseRepository<Supplier>
     {
-       List<Supplier>GetSuppliersBySuppliersID(int  SupplierID);
+       List<SuppliersModel>GetSuppliersBySuppliersID(int SupplierID);
+       List<SuppliersModel> GetSuppliers();
+       SuppliersModel GetSupplierBySupplierID(int Id);
     }
 }
