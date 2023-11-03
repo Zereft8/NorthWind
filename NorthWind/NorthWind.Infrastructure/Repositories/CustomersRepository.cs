@@ -3,7 +3,9 @@ using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Core;
 using NorthWind.Infrastructure.Interfaces;
-
+using NorthWind.Infrastructure.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NorthWind.Infrastructure.Repositories
 {
@@ -19,10 +21,38 @@ namespace NorthWind.Infrastructure.Repositories
         
         }
 
+        public CustomerModel GetCustomerById(string Id)
+        {
+            return this.GetCustomers().SingleOrDefault(cu => cu.CustomerID == Id);
+        }
+
+        public List<CustomerModel> GetCustomers()
+        {
+            var customers = this.GetEntities()
+                                .Where(cu => !cu.Eliminado)
+                                .Select(cu => new CustomerModel()
+                                {
+                                    CustomerID = cu.CustomerID,
+                                    CompanyName = cu.CompanyName,
+                                    ContactName = cu.ContactName,
+                                    ContactTitle = cu.ContactTitle,
+                                    Address = cu.Address,
+                                    City = cu.City,
+                                    Region = cu.Region,
+                                    PostalCode = cu.PostalCode,
+                                    Country = cu.Country,
+                                    Phone = cu.Phone,
+                                    Fax = cu.Fax,
+                                    FechaRegistro = cu.FechaRegistro
+                                }).ToList();
+
+            return customers;
+        }
+
         public override void Save(Customer entity)
         {
-            context.Customers.Add(entity);
-            context.SaveChanges();
+            base.Save(entity);
+            this.context.SaveChanges();
         }
 
         public override void Update(Customer entity)
@@ -43,8 +73,21 @@ namespace NorthWind.Infrastructure.Repositories
             customerToUpdae.IdUsuarioMod= entity.IdUsuarioMod;
             customerToUpdae.CustomerID = entity.CustomerID;
 
-            context.Customers.Update(customerToUpdae);
-            context.SaveChanges();
+            this.context.Customers.Update(customerToUpdae);
+            this.context.SaveChanges();
+        }
+
+        public override void Remove(Customer entity)
+        {
+            Customer customer = this.GetEntity(entity.CustomerID);
+
+            customer.CustomerID= entity.CustomerID;
+            customer.Eliminado = entity.Eliminado;
+            customer.FechaElimino= entity.FechaElimino;
+            customer.IdUsuarioElimino = entity.IdUsuarioElimino;
+
+            this.context.Customers.Update(customer);
+            this.context.SaveChanges();
         }
 
     }

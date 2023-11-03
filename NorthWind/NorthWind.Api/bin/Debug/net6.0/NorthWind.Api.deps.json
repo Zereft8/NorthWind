@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "NorthWind.Api/1.0.0": {
         "dependencies": {
-          "NorthWind.Infrastructure": "1.0.0",
+          "NorthWind.Application": "1.0.0",
+          "NorthWind.Ioc": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -979,6 +980,14 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "NorthWind.Application/1.0.0": {
+        "dependencies": {
+          "NorthWind.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "NorthWind.Application.dll": {}
+        }
+      },
       "NorthWind.Domain/1.0.0": {
         "runtime": {
           "NorthWind.Domain.dll": {}
@@ -992,6 +1001,16 @@
         },
         "runtime": {
           "NorthWind.Infrastructure.dll": {}
+        }
+      },
+      "NorthWind.Ioc/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.32",
+          "NorthWind.Application": "1.0.0",
+          "NorthWind.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "NorthWind.Ioc.dll": {}
         }
       }
     }
@@ -1730,12 +1749,22 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "NorthWind.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "NorthWind.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "NorthWind.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NorthWind.Ioc/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.Api.Models.Modules.Customer;
+using NorthWind.Application.Contracts;
+using NorthWind.Application.Dtos.Customer;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Interfaces;
 
@@ -12,12 +14,12 @@ namespace NorthWind.Api.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly ICustomersRepository customersRepository;
+        private readonly ICustomerService customerService;  
 
-        public CustomersController(ICustomersRepository customersRepository) 
+        public CustomersController(ICustomerService customerService) 
         {
 
-            this.customersRepository = customersRepository;
+            this.customerService = customerService;
 
         }
 
@@ -26,106 +28,73 @@ namespace NorthWind.Api.Controllers
         public IActionResult Get()
         {
 
-            var customer = this.customersRepository.GetEntities()
-                                                   .Select(cm => 
-                                                            new GetCustomersModel()
-                                                            {
-                                                                CompanyName = cm.CompanyName,
-                                                                ContactName = cm.ContactName,
-                                                                ContactTitle = cm.ContactTitle,
-                                                                Address = cm.Address,
-                                                                City = cm.City,
-                                                                Region = cm.Region,
-                                                                PostalCode = cm.PostalCode,
-                                                                Country = cm.Country,
-                                                                Phone = cm.Phone,
-                                                                Fax = cm.Fax,
-                                                                FechaRegistro = cm.FechaRegistro,
-                                                                CustomerID = cm.CustomerID
-                                                            });
+            var result = this.customerService.GetAll();
 
+            if(!result.Success) 
+            {
+                return BadRequest(result);
+            }
 
-
-            return Ok(customer);
+            return Ok(result);
         }
 
 
         [HttpGet("GetCustomerById")]
-        public IActionResult Get(string id)
+        public IActionResult Get(string Id)
         {
-            var customer = this.customersRepository.GetEntity(id);
+            var result = this.customerService.GetById(Id);
 
-            GetCustomersModel customersModel = new GetCustomersModel()
-            {   
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
 
-                CompanyName = customer.CompanyName,
-                ContactName = customer.ContactName,
-                ContactTitle = customer.ContactTitle,
-                Address = customer.Address,
-                City = customer.City,
-                Region = customer.Region,
-                PostalCode = customer.PostalCode,
-                Country = customer.Country,
-                Phone = customer.Phone,
-                Fax = customer.Fax,
-                FechaRegistro = customer.FechaRegistro,
-                CustomerID = customer.CustomerID
-
-            };
-
-            return Ok(customersModel);
+            return Ok(result);
         }
 
 
         [HttpPost("SaveCustomer")]
-        public IActionResult Post([FromBody] CustomerAppModel customerApp)
+        public IActionResult Post([FromBody] CustomerDtoAdd customerAdd)
         {
-            this.customersRepository.Save(new Customer()
+            var result = this.customerService.Save(customerAdd);
+
+            if (!result.Success)
             {
-                CustomerID = customerApp.CustomerId,
-                CompanyName = customerApp.CompanyName,
-                ContactName = customerApp.ContactName,
-                ContactTitle = customerApp.ContactTitle,
-                Address = customerApp.Address,
-                City = customerApp.City,
-                Region = customerApp.Region,
-                PostalCode = customerApp.PostalCode,
-                Country = customerApp.Country,
-                Phone = customerApp.Phone,
-                Fax = customerApp.Fax,
-                FechaRegistro = customerApp.ChangeDate,
-                IdUsuarioCreacion = customerApp.ChangeUser
+                return BadRequest(result);
+            }
 
-            });
-
-            return Ok(); 
+            return Ok(result);
         }
 
 
         [HttpPost("UpdateCustomer")]
-        public IActionResult Put([FromBody] CustomerUpdateModel customerUpdate)
+        public IActionResult Put([FromBody] CustomerDtoUpdate customerUpdate)
         {
 
-            this.customersRepository.Update(new Customer()
+            var result = this.customerService.Update(customerUpdate);
+
+            if (!result.Success)
             {
+                return BadRequest(result);
+            }
 
-                CompanyName = customerUpdate.CompanyName,
-                ContactName = customerUpdate.ContactName,
-                ContactTitle = customerUpdate.ContactTitle,
-                Address = customerUpdate.Address,
-                City = customerUpdate.City,
-                Region = customerUpdate.Region,
-                PostalCode = customerUpdate.PostalCode,
-                Country = customerUpdate.Country,
-                Phone = customerUpdate.Phone,
-                Fax = customerUpdate.Fax,
-                FechaMod = customerUpdate.ChangeDate,
-                IdUsuarioMod = customerUpdate.ChangeUser,
-                CustomerID = customerUpdate.CustomerID
+            return Ok(result);
 
-            });
+        }
 
-            return Ok();
+
+        [HttpPost("RemoveCustomer")]
+        public IActionResult Remove([FromBody] CustomerDtoRemove customerRemove)
+        {
+
+            var result = this.customerService.Remove(customerRemove);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
 
         }
 

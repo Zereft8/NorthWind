@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y4nYe/KdssEuuiIZpbKTlxS8wshnkwZwE7kKA7CGyIIu2rHHHxmB5ltQj8HKYlZlfa4evoiPpWPIrm+ryUxJBg==",
+  "dgSpecHash": "47/TAQdMcEdyAtSDq5Gx5HMRjEsVovf79mjBYn+/CsXvzEPFrhT16x7+sNgPs0cIkISJA0sl0XLnK/7Sg3AgAA==",
   "success": true,
   "projectFilePath": "C:\\myProject\\Project.NorthWind\\NorthWind\\NorthWind.Api\\NorthWind.Api.csproj",
   "expectedPackageFiles": [

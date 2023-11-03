@@ -5,4 +5,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.32" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NorthWind.Application\NorthWind.Application.csproj" />
+    <ProjectReference Include="..\NorthWind.Infrastructure\NorthWind.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

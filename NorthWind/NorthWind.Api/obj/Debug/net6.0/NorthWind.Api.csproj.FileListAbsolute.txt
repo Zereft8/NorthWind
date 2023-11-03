@@ -61,3 +61,7 @@ C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWin
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.dll
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.pdb
 C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Domain.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.pdb

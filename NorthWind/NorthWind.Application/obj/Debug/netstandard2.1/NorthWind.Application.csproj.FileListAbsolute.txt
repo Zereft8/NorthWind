@@ -1,0 +1,15 @@
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Application.deps.json
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Application.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Application.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Infrastructure.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Infrastructure.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.csproj.AssemblyReference.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.AssemblyInfoInputs.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.AssemblyInfo.cs
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.csproj.CoreCompileInputs.cache
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.csproj.CopyComplete
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.dll
+C:\myProject\Project.NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.pdb
