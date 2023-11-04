@@ -8,3 +8,8 @@ C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\North
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.csproj.CoreCompileInputs.cache
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.dll
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.pdb
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Domain.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Infrastructure.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Infrastructure.pdb
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\bin\Debug\netstandard2.1\NorthWind.Domain.pdb
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Application\obj\Debug\netstandard2.1\NorthWind.Application.csproj.CopyComplete

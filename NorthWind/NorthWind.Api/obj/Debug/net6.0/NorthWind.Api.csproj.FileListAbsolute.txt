@@ -88,3 +88,5 @@ C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\North
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Api\obj\Debug\net6.0\NorthWind.Api.pdb
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Api\obj\Debug\net6.0\NorthWind.Api.genruntimeconfig.cache
 C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Api\obj\Debug\net6.0\ref\NorthWind.Api.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.dll
+C:\Users\Sebas\Desktop\Itla\Cuarto cuatrimestre\Programacion 222\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.pdb

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NorthWind.Application.Contracts;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
@@ -11,43 +12,54 @@ namespace NorthWind.Api.Controllers
     [Route("api/[controller]")]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICategoriesRepositry categoriesRepositry;
+        private readonly ICategoryService categoryService;
 
         // GET: CategoriesController/Create
-        public CategoriesController(ICategoriesRepositry categoriesRepositry)
+        public CategoriesController(ICategoryService categoryService)
         {
-            this.categoriesRepositry = categoriesRepositry;
+            this.categoryService = categoryService;
         }
 
         [HttpGet]
-        public List<Categories> Get()
+        public IActionResult Get()
         {
 
-            var categories = this.categoriesRepositry.GetEntities();
-            return categories;
+            var result = this.categoryService.GetAll();
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public Categories Get(int id)
+        public IActionResult Get(int id)
         {
-            var category = this.categoriesRepositry.GetEntity(id);
-            return category;
+            var result = this.categoryService.GetById(id);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteCategory(int id)
-        //{
-        //    var deletionResult = await this.categoriesRepositry.DeleteCategory(id);
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCategory([FromBody] DeleteCategory deleteCategory)
+        {
+            var result = this.categoryService.Remove(deleteCategory);
 
-        //    if (deletionResult)
-        //    {
-        //        return Ok();
-        //    }
-        //    else
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+
+        }
 
     }
 }
