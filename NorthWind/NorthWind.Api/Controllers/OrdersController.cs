@@ -22,7 +22,7 @@ namespace NorthWind.Api.Controllers
         [HttpGet]
         public IEnumerable<Orders> Get()
         {
-            var orders = this.ordersRepository.GetOrders();
+            var orders = this.ordersRepository.GetEntities();
 
             return orders;
         }
@@ -31,7 +31,7 @@ namespace NorthWind.Api.Controllers
         [HttpGet("{id}")]
         public Orders Get(int id)
         {
-            return this.ordersRepository.GetOrders(id);
+            return this.ordersRepository.GetEntity(id);
         }
 
         // POST api/<OrdersController>

@@ -16,7 +16,7 @@ namespace NorthWind.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Orders>()
-                .HasKey(or => new { or.OrderID, or.CustomerID });
+                .HasKey(or => new { or.OrderID });
         }
     }
 }

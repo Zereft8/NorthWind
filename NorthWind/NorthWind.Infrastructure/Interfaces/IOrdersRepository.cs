@@ -1,13 +1,13 @@
 ﻿
 using NorthWind.Domain.Entities;
 using NorthWind.Domain.Repository;
+using System.Collections.Generic;
 
 namespace NorthWind.Infrastructure.Interfaces
 {
-    public interface IOrdersRepository : IOrdersRepository<Orders>
+    public interface IOrdersRepository : IBaseRepository<Orders>
     {
         // Metodos exclusivos de orders
-        Orders GetEntities(int OrderID, int CustomerID);
-
+        
     }
 }

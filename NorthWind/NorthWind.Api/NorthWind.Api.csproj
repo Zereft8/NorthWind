@@ -14,6 +14,12 @@
     <ProjectReference Include="..\NorthWind.Infrastructure\NorthWind.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\NewFolder1\" />
+    <Folder Include="Controllers\NewFolder2\" />
+    <Folder Include="Controllers\NewFolder\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
