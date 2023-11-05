@@ -11,13 +11,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NorthWind.Application\NorthWind.Application.csproj" />
     <ProjectReference Include="..\NorthWind.Infrastructure\NorthWind.Infrastructure.csproj" />
+    <ProjectReference Include="..\NorthWind.Ioc\NorthWind.Ioc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\NewFolder1\" />
     <Folder Include="Controllers\NewFolder2\" />
     <Folder Include="Controllers\NewFolder\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

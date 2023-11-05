@@ -1,7 +1,3 @@
 is_global = true
 build_property.RootNamespace = NorthWind.Domain
-<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\
-=======
-build_property.ProjectDir = C:\Users\Elianny\Source\Repos\Zereft8\NorthWind\NorthWind\NorthWind.Domain\
->>>>>>> Stashed changes

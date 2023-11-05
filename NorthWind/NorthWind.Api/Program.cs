@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using NorthWind.Infrastructure.Context;
-using NorthWind.Infrastructure.Interfaces;
-using NorthWind.Infrastructure.Repositories;
-using System.Data.SqlClient;
+using NorthWind.Ioc.Dependencies;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<NorthWindContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NorthWindContext")));
 //dependencia de los repositorios
 
-builder.Services.AddTransient<IOrdersRepository, OrdersRepository>();
+//builder.Services.AddTransient<IOrdersRepository, OrdersRepository>();
+
+
+// Dependencias del modulo orders //
+builder.Services.AddOrderDependency();
+
 
 //DEpendencia de los app services
 

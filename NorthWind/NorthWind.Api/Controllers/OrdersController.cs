@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Exchange.WebServices.Data;
+using NorthWind.Api.Models.Modules.Order;
+using NorthWind.Application.Contracts;
+using NorthWind.Application.Dtos.Orders;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Interfaces;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,45 +16,93 @@ namespace NorthWind.Api.Controllers
     public class OrdersController : ControllerBase
     {
 
-        private readonly IOrdersRepository ordersRepository;
+        private readonly IOrderService orderService;
 
-        public OrdersController(IOrdersRepository ordersRepository)
+        public OrdersController(IOrderService orderService)
         {
-            this.ordersRepository = ordersRepository;
+            this.orderService = orderService;
         }
 
-        // GET: api/<OrdersController>
+
         [HttpGet]
-        public IEnumerable<Orders> Get()
+        public IActionResult GetOrders()
         {
-            var orders = this.ordersRepository.GetEntities();
 
-            return orders;
+            var result = this.orderService.GetAll();
+            if (!result.Success)
+            {
+                return BadRequest(result);
+
+            }
+
+
+            return Ok(result);
         }
 
-        // GET api/<OrdersController>/5
-        [HttpGet("{id}")]
-        public Orders Get(int id)
+
+        [HttpGet("GetOrder")]
+        public IActionResult Get(int OrderID)
         {
-            return this.ordersRepository.GetEntity(id);
+
+            var result = this.orderService.GetById(OrderID);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+
+            }
+
+
+            return Ok(result);
         }
 
-        // POST api/<OrdersController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+
+        [HttpPost("SaveOrder")]
+        public IActionResult Post([FromBody] OrderDtoAdd ordersAdd)
         {
+
+            var result = this.orderService.Save(ordersAdd);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+
+            }
+
+
+            return Ok(result);
         }
 
-        // PUT api/<OrdersController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/<OrdersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
+
+
+    [HttpPut("UpdateOrder")]
+    public IActionResult Put([FromBody] OrderDtoUpdate orderUpdate)
+    {
+        var result = this.orderService.Update(orderUpdate);
+        if (!result.Success)
+        {
+            return BadRequest(result);
+
+        }
+
+
+        return Ok(result);
+    }
+
+    [HttpPut("RemoveOrder")]
+    public IActionResult Remove([FromBody] OrderDtoRemove orderRemove)
+    {
+        var result = this.orderService.Removw(orderRemove);
+        if (!result.Success)
+        {
+            return BadRequest(result);
+
+        }
+
+
+        return Ok(result);
+    }
+
+
 }
+

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jlWxgxKE6jRYiGwBvOMrw39qXo9/varvgpOFqJIZRwyymdLyFhLp164JfKzsCzAl+x7npJNEIsPgMmsHNIAgUw==",
+  "dgSpecHash": "B+4O6ANaRLGXtSb4RfazT/g/SJ3yFg/JNPB/hUJX3cXvhadQfAsFPXAeMzQsxCQxq9XfoIJa3DGPU6vl+vgDCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Api\\NorthWind.Api.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.32\\microsoft.entityframeworkcore.analyzers.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.32\\microsoft.entityframeworkcore.relational.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.32\\microsoft.entityframeworkcore.sqlserver.3.1.32.nupkg.sha512",
+    "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.exchange.webservices\\2.2.0\\microsoft.exchange.webservices.2.2.0.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.32\\microsoft.extensions.caching.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.32\\microsoft.extensions.caching.memory.3.1.32.nupkg.sha512",
@@ -20,7 +21,7 @@
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.32\\microsoft.extensions.configuration.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.32\\microsoft.extensions.configuration.binder.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.32\\microsoft.extensions.dependencyinjection.3.1.32.nupkg.sha512",
-    "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.32\\microsoft.extensions.dependencyinjection.abstractions.3.1.32.nupkg.sha512",
+    "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.logging\\3.1.32\\microsoft.extensions.logging.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.32\\microsoft.extensions.logging.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.extensions.options\\3.1.32\\microsoft.extensions.options.3.1.32.nupkg.sha512",
@@ -109,5 +110,16 @@
     "C:\\Users\\Elianny\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Microsoft.Exchange.WebServices 2.2.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Microsoft.Exchange.WebServices",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
