@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using NorthWind.Application.Contracts;
+using NorthWind.Application.Services;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using NorthWind.Infrastructure.Repositories;
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<NorthWindContext>(options => options.UseSqlServer(
 
 builder.Services.AddTransient<IOrderDetailsRepository, OrderDetailsRepository>();
 builder.Services.AddTransient<ICategoriesRepositry, CategoriesRepository>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NorthWind.Domain.Entities;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,4 +17,6 @@ public class Categories
     public string Description { get; set; } = string.Empty;
 
     public byte[]? Picture { get; set; }
+
+    public ICollection<Products>? Products { get; set; }
 }

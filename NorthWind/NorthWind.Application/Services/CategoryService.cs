@@ -59,8 +59,6 @@ namespace NorthWind.Application.Services
             return result;
         }
 
-
-
         public ServiceResult Save(AddCategory dtoAdd)
         {
             ServiceResult result = new ServiceResult();
