@@ -1,11 +1,14 @@
 ﻿
 using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NorthWind.Application.Contracts;
 using NorthWind.Application.Core;
 using NorthWind.Application.Dtos.Customer;
+using NorthWind.Application.Exceptions;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Interfaces;
+using NorthWind.Application.Extentions;
 
 namespace NorthWind.Application.Services
 {
@@ -13,12 +16,14 @@ namespace NorthWind.Application.Services
     {
         private readonly ICustomersRepository customersRepository;
         private readonly ILogger<CustomerService> logger;
+        private readonly IConfiguration configuration;
 
         public CustomerService(ICustomersRepository customersRepository, 
-                               ILogger<CustomerService> logger) 
+                               ILogger<CustomerService> logger, IConfiguration configuration) 
         {
             this.customersRepository = customersRepository;
             this.logger = logger;
+            this.configuration = configuration;
         }
 
         public ServiceResult GetAll()
@@ -96,6 +101,17 @@ namespace NorthWind.Application.Services
 
             try
             {
+
+                var validresult = dtoAdd.IsCustomerValid(this.configuration);
+
+                if (!validresult.Success) 
+                {
+                    result.Message = validresult.Message;
+                    result.Success = validresult.Success;
+                    return result;
+                }
+
+
                 Customer customer = new Customer()
                 {
                     CompanyName = dtoAdd.CompanyName,
@@ -117,6 +133,12 @@ namespace NorthWind.Application.Services
 
                 result.Message = "Cliente guardado satisfactoriamente";
             }
+            catch (CustomerServiceException cse)
+            {
+                result.Success = false;
+                result.Message = cse.Message;
+                this.logger.LogError($"{result.Message}", cse.ToString());
+            }
             catch (Exception ex)
             {
 
@@ -134,6 +156,17 @@ namespace NorthWind.Application.Services
 
             try
             {
+
+                var validresult = dtoUpdate.IsCustomerValid(this.configuration);
+
+                if (!validresult.Success)
+                {
+                    result.Message = validresult.Message;
+                    result.Success = validresult.Success;
+                    return result;
+                }
+
+
                 Customer customer = new Customer()
                 {
                     CompanyName = dtoUpdate.CompanyName,
@@ -154,6 +187,12 @@ namespace NorthWind.Application.Services
                 this.customersRepository.Update(customer);
 
                 result.Message = "Cliente actualizado satisfactoriamente";
+            }
+            catch (CustomerServiceException cse)
+            {
+                result.Success = false;
+                result.Message = cse.Message;
+                this.logger.LogError($"{result.Message}", cse.ToString());
             }
             catch (Exception ex)
             {
