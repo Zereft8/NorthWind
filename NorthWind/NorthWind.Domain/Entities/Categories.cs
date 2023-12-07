@@ -18,5 +18,4 @@ public class Categories
 
     public byte[]? Picture { get; set; }
 
-    public ICollection<Products>? Products { get; set; }
 }

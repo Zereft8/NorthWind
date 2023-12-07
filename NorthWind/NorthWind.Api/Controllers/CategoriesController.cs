@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NorthWind.Application.Contracts;
+using NorthWind.Application.Dtos.Categories;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
@@ -61,8 +62,8 @@ namespace NorthWind.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("update-category")]
-        public IActionResult Update([FromBody] UpdateCategory updateCategory)
+        [HttpPost("update-category/{id}")]
+        public IActionResult Update(int id, [FromBody] UpdateCategory updateCategory)
         {
 
             var result = this.categoryService.Update(updateCategory);

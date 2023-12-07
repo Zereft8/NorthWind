@@ -1,7 +1,10 @@
 ﻿using System;
 
-public class GetCategory
+namespace NorthWind.Application.Dtos.Categories
 {
-	public int CategoryID { get; set; }
-	
+	public class GetCategory
+	{
+		public int CategoryID { get; set; }
+
+	}
 }

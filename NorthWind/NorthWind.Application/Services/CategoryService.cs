@@ -3,6 +3,7 @@ using System;
 using Microsoft.Extensions.Logging;
 using NorthWind.Application.Contracts;
 using NorthWind.Application.Core;
+using NorthWind.Application.Dtos.Categories;
 using NorthWind.Infrastructure.Interfaces;
 
 namespace NorthWind.Application.Services
@@ -97,9 +98,7 @@ namespace NorthWind.Application.Services
 
             try
             {
-                Categories categorie = this.categoriesRepositry.GetEntity(dtoUpdate.CategoryID);
-                if (categorie != null)
-                {
+
                     Categories categories = new Categories()
                     {
                         CategoryID=dtoUpdate.CategoryID,
@@ -109,8 +108,7 @@ namespace NorthWind.Application.Services
                     };
                     this.categoriesRepositry.Update(categories);
                     result.Message = "Categoria actualizada satisfactoriamente";
-                }
-
+                
             }
             catch (Exception ex)
             {

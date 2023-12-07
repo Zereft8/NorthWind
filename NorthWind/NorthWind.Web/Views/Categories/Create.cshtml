@@ -1,0 +1,50 @@
+﻿@model NorthWind.Application.Dtos.Categories.AddCategory
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Category</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="CategoryName"></label>
+        <input asp-for="CategoryName" class="form-control" />
+        <span asp-validation-for="CategoryName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Picture">Select Image:</label>
+        <input type="file" id="Picture" accept="image/*" />
+        <input type="hidden" id="hiddenImageData" asp-for="Picture" />
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+ <script>
+    document.getElementById('Picture').addEventListener('change', function (e) {
+        var file = e.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (readerEvent) {
+                var imageData = readerEvent.target.result.split(',')[1];
+                // Asigna imageData a un campo oculto o a la propiedad PictureData del modelo AddCategory
+                document.getElementById('hiddenImageData').value = imageData;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

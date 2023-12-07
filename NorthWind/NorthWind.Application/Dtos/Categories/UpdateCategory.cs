@@ -1,11 +1,13 @@
 ﻿using System;
-
-public class UpdateCategory
+namespace NorthWind.Application.Dtos.Categories
 {
-    public int CategoryID { get; set; }
-    public string CategoryName { get; set; } = string.Empty;
+    public class UpdateCategory
+    {
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; } = string.Empty;
 
-    public string Description { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
 
-    public byte[]? Picture { get; set; }
+        public byte[]? Picture { get; set; }
+    }
 }

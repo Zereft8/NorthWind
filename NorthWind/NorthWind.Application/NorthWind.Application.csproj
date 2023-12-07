@@ -6,7 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Dtos - Copy\**" />
+    <EmbeddedResource Remove="Dtos - Copy\**" />
+    <None Remove="Dtos - Copy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NorthWind.Infrastructure\NorthWind.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
   </ItemGroup>
 
 </Project>
