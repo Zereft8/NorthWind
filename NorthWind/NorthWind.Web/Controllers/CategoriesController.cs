@@ -7,28 +7,34 @@ namespace NorthWind.Web.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly ICategoryService categoryService;
+        private readonly ICategoryService _categoryService;
         HttpClientHandler httpClientHandler = new HttpClientHandler();
 
         // GET: CategoriesController/Create
         public CategoriesController(ICategoryService categoryService)
         {
-            this.categoryService = categoryService;
+            _categoryService = categoryService;
         }
         public ActionResult Index()
         {
-            ServiceResult result = new ServiceResult();
+            var result = this._categoryService.GetAll();
 
-            using (var client = new HttpClient(this.httpClientHandler))
+            if (!result.Success)
             {
-                using (var response = client.GetAsync("http://localhost:5130/api/Categories").Result)
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string apiResponse = response.Content.ReadAsStringAsync().Result;
-                        result = JsonConvert.DeserializeObject<ServiceResult>(apiResponse);
-                }
+                ViewBag.Message = result.Message;
             }
+            //ServiceResult result = new ServiceResult();
+
+            //using (var client = new HttpClient(this.httpClientHandler))
+            //{
+            //    using (var response = client.GetAsync("http://localhost:5130/api/Categories").Result)
+
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse = response.Content.ReadAsStringAsync().Result;
+            //            result = JsonConvert.DeserializeObject<ServiceResult>(apiResponse);
+            //    }
+            //}
             return View(result.Data);
         }
     }

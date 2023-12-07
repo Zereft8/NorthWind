@@ -6,12 +6,13 @@ using System.Text;
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace NorthWind.Infrastructure.Context
 {
     public class NorthWindContext : DbContext
     {
-        public NorthWindContext(DbContextOptions<NorthWindContext> options) :base(options)
+        public NorthWindContext(DbContextOptions<NorthWindContext> options) : base(options)
         {
 
         }
@@ -29,14 +30,15 @@ namespace NorthWind.Infrastructure.Context
                 .HasKey(p => new { p.CategoryID, p.SupplierID }); // Define composite primary key
 
 
-            modelBuilder.Entity<Categories>()
-                .HasMany(category => category.Products)
-                .WithOne(product => product.Category)
-                .HasForeignKey(product => new { product.CategoryID, product.SupplierID })
-                .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Categories>()
+            //    .HasMany(category => category.Products)
+            //    .WithOne(product => product.Category)
+            //    .HasForeignKey(product => new { product.CategoryID, product.SupplierID })
+            //    .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
         }
 
     }
 }
+

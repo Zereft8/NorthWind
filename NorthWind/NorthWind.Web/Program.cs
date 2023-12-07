@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using NorthWind.Infrastructure.Context;
+using NorthWind.Ioc.Dependencies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<NorthWindContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NorthWindContext")));
+
+builder.Services.AddCategoryDependency();
 
 var app = builder.Build();
 
