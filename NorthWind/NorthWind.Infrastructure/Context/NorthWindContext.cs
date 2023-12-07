@@ -1,12 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NorthWind.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
 
 namespace NorthWind.Infrastructure.Context
 {

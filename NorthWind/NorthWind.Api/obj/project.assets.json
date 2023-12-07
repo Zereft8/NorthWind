@@ -1543,10 +1543,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.32",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
-          "NorthWind.Infrastructure": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "NorthWind.Infrastructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NorthWind.Application.dll": {}
@@ -1559,9 +1556,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.32",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Microsoft.EntityFrameworkCore": "3.1.32"
         },
         "compile": {
           "bin/placeholder/NorthWind.Domain.dll": {}
@@ -1574,10 +1569,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.32",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
-          "NorthWind.Domain": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "NorthWind.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NorthWind.Infrastructure.dll": {}
