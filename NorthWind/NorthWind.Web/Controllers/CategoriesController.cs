@@ -12,7 +12,7 @@ namespace NorthWind.Web.Controllers
         private readonly ICategoryService _categoryService;
         HttpClientHandler httpClientHandler = new HttpClientHandler();
 
-        // GET: CategoriesController/Create
+
         public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
@@ -108,7 +108,6 @@ namespace NorthWind.Web.Controllers
 
                     StringContent content = new StringContent(JsonConvert.SerializeObject(addCategory), System.Text.Encoding.UTF8, "application/json");
 
-                    //addCategory.Picture = GenerateRandomByteArray();
 
 
                     using (var response = client.PostAsync(url, content).Result)
@@ -144,7 +143,7 @@ namespace NorthWind.Web.Controllers
                 return View();
             }
         }
-        // GET: CustomerWithHttpClientController/Edit/5
+
         public ActionResult Edit(string id)
         {
 
@@ -175,7 +174,7 @@ namespace NorthWind.Web.Controllers
             return View(categoryDetail.data);
         }
 
-        // POST: CustomerWithHttpClientController/Edit/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UpdateCategory updateCategory)
@@ -224,8 +223,37 @@ namespace NorthWind.Web.Controllers
             }
         }
 
-        // POST: CustomerWithHttpClientController/Delete/5
-        [HttpDelete]
+
+        public ActionResult Delete(string id)
+        {
+            CategoryDetailResponse categoryDetail = new CategoryDetailResponse();
+
+
+            using (var client = new HttpClient(this.httpClientHandler))
+            {
+
+                var url = $"http://localhost:5130/api/Categories/{id}";
+
+                using (var response = client.GetAsync(url).Result)
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = response.Content.ReadAsStringAsync().Result;
+
+                        categoryDetail = JsonConvert.DeserializeObject<CategoryDetailResponse>(apiResponse);
+
+                        if (!categoryDetail.success)
+                        {
+                            ViewBag.Message = categoryDetail.message;
+                        }
+                    }
+                }
+            }
+
+            return View(categoryDetail.data);
+        }
+
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
@@ -238,7 +266,7 @@ namespace NorthWind.Web.Controllers
                 using (var client = new HttpClient(this.httpClientHandler))
                 {
 
-                    var url = $"http://localhost:5130/api/Categories/{id}";
+                    var url = $"http://localhost:5130/api/Categories/delete-category/{id}";
 
                     StringContent content = new StringContent(JsonConvert.SerializeObject(id), System.Text.Encoding.UTF8, "application/json");
 
@@ -261,7 +289,7 @@ namespace NorthWind.Web.Controllers
                             ViewBag.Message = baseResponse.message;
                             return View();
                         }
-                    }
+                   }
                 }
 
                 return RedirectToAction(nameof(Index));

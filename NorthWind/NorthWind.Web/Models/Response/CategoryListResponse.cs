@@ -1,4 +1,6 @@
-﻿namespace NorthWind.Web.Models.Response
+﻿using NorthWind.Domain.Entities;
+
+namespace NorthWind.Web.Models.Response
 {
     public class CategoryListResponse
     {
@@ -17,5 +19,6 @@
 
         public byte[]? Picture { get; set; }
 
+        public ICollection<Products> Products { get; set; } = new List<Products>();
     }
 }

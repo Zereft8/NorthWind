@@ -16,18 +16,25 @@ namespace NorthWind.Infrastructure.Context
         public DbSet<Products> Products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Categories>()
+                .HasMany(c => c.Products)
+                .WithOne(p => p.Category)
+                .HasForeignKey(p => p.CategoryID)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<OrderDetails>()
-                .HasKey(od => new { od.OrderID, od.ProductID }); // Define la clave primaria compuesta
+                .HasKey(od => new { od.OrderID, od.ProductID });
 
             modelBuilder.Entity<Products>()
-                .HasKey(p => new { p.CategoryID, p.SupplierID }); // Define composite primary key
+                .HasKey(p => new { p.ProductID, p.SupplierID, p.CategoryID });
 
+            modelBuilder.Entity<Products>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryID);
 
-            //modelBuilder.Entity<Categories>()
-            //    .HasMany(category => category.Products)
-            //    .WithOne(product => product.Category)
-            //    .HasForeignKey(product => new { product.CategoryID, product.SupplierID })
-            //    .OnDelete(DeleteBehavior.Cascade);
+;
+
 
             base.OnModelCreating(modelBuilder);
         }

@@ -18,6 +18,49 @@
         </dd>
         
     </dl>
+    <hr />
+    <h3>Productos</h3>
+    <table>
+            <thead>
+        <tr>
+
+            <th class="col-sm-3">
+                Nombre
+            </th>
+            <th class="col-sm-5">
+                Cantidad por unidad
+            </th>
+            <th class="col-sm-2">
+                Precio unidaad
+            </th>
+            <th class="col-sm-2">
+                Unidades en stock
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new {  id = Model.CategoryID  }) |

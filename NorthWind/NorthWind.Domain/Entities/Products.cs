@@ -9,10 +9,10 @@ namespace NorthWind.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { get; set; }
         public string ProductName { get; set; } = string.Empty;
-        [Key, Column(Order = 2)]
+        [Key, Column(Order = 1)]
         public int SupplierID { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 2)]
         public int CategoryID { get; set; }
 
         public string QuantityPerUnit { get; set; } = string.Empty;
