@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iJl5lYT2RDnmCKyZoa4bUWI/7tgPSoNBSvbKBCjU7VS0RjGOO6EkEYWCpebUTslcaaRjQIF8b0abB5Eszr1p2g==",
+  "dgSpecHash": "jMRLCqUMuLF6PjV1XdoFtQXSiDEFXLIVIhn+dn2EvRThUNwmjW6zSuLCbQsp7vatvdx3kQoTvr0pylCjRPZU+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj",
+  "projectFilePath": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\Elianny\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.1.0\\microsoft.aspnetcore.authentication.core.2.1.0.nupkg.sha512",

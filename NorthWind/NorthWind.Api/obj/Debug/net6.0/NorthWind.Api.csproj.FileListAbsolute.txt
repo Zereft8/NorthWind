@@ -93,3 +93,10 @@ C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debu
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.dll
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Infrastructure.pdb
 C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Domain.pdb
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\Microsoft.Exchange.WebServices.Auth.dll
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\Microsoft.Exchange.WebServices.dll
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.dll
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.dll
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.pdb
+C:\Users\Elianny\source\repos\Zereft8\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.pdb

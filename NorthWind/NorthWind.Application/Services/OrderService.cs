@@ -26,16 +26,8 @@ namespace NorthWind.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                var orders = this.ordersRepository.GetEntities()
-                                                 .Where(or => !or.Eliminado)
-                                                  .Select(or=> new OrderDtoGet() {
-                                                      RequiredDate = or.RequiredDate,
-                                                      ShipName = or.ShipName,
-                                                      ShipAddress = or.ShipName,
-                                                      ShipCity = or.ShipCity,
-                                                      OrderID = or.OrderID
+                result.Data = this.ordersRepository.GetOrders();
 
-                                                  }).ToList();
             }
             catch (Exception ex)
             {
@@ -53,7 +45,7 @@ namespace NorthWind.Application.Services
 
             try
             {
-                result.Data = this.ordersRepository.GetOrders(OrderID);
+                result.Data = this.ordersRepository.GetOrderById(OrderID);
             }
             catch (Exception ex)
             {
@@ -130,12 +122,14 @@ namespace NorthWind.Application.Services
             ServiceResult result = new ServiceResult();
 
             try
+
+                //Validaciones
+
             {
                 Orders orders = new Orders()
                 {
                     RequiredDate = (DateTime)dtoUpdate.RequiredDate,
-                    OrderDate = dtoUpdate.OrderDate
-
+                  
 
                 };
                 this.ordersRepository.Update(orders);

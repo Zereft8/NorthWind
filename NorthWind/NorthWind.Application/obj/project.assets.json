@@ -7187,11 +7187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
       "projectName": "NorthWind.Application",
-      "projectPath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
+      "projectPath": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
       "packagesPath": "C:\\Users\\Elianny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\obj\\",
+      "outputPath": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7213,8 +7213,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj"
+            "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj"
             }
           }
         }
@@ -7250,7 +7250,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d/MwgtapbjaR2MCEXyWfdibkMClVApGSQbg1Z7ggQID5YW18w74QzY8v3fjbCSCp6BCLjeOHWS5VfVqN0nXF+A==",
+  "dgSpecHash": "tPyCC3kaSKHouDT1+aeL0bI5tVJUeR5BO21nZMQ4kaF1dxHo0Jjp8W0YH3Eh6sdffR0PfH9hJITm3kB5pnHr0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elianny\\source\\repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elianny\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],

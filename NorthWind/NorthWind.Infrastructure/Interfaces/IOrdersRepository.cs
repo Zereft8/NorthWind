@@ -9,8 +9,8 @@ namespace NorthWind.Infrastructure.Interfaces
     public interface IOrdersRepository : IBaseRepository<Orders>
     {
         // Metodos exclusivos de orders
-        List<OrderModel> GetOrders(int orderID);
-        OrderModel GetOrderById(int Id);
+        List<OrderModel> GetOrders();
+        OrderModel GetOrderById(int OrderID);
 
 
     }
