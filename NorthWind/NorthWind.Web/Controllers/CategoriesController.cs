@@ -224,23 +224,51 @@ namespace NorthWind.Web.Controllers
             }
         }
 
-        // GET: CustomerWithHttpClientController/Delete/5
+        // POST: CustomerWithHttpClientController/Delete/5
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            return View();
-        }
 
-        // POST: CustomerWithHttpClientController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
+            BaseResponse baseResponse = new BaseResponse();
+
             try
             {
+
+                using (var client = new HttpClient(this.httpClientHandler))
+                {
+
+                    var url = $"http://localhost:5130/api/Categories/{id}";
+
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(id), System.Text.Encoding.UTF8, "application/json");
+
+                    using (var response = client.PostAsync(url, content).Result)
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string apiResponse = response.Content.ReadAsStringAsync().Result;
+
+                            baseResponse = JsonConvert.DeserializeObject<BaseResponse>(apiResponse);
+
+                            if (!baseResponse.success)
+                            {
+                                ViewBag.Message = baseResponse.message;
+                                return View();
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.Message = baseResponse.message;
+                            return View();
+                        }
+                    }
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                ViewBag.Message = baseResponse.message;
                 return View();
             }
         }

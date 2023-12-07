@@ -121,14 +121,14 @@ namespace NorthWind.Application.Services
             return result;
         }
 
-        public ServiceResult Remove(DeleteCategory dtoRemove)
+        public ServiceResult Remove(int Id)
         {
             ServiceResult result = new ServiceResult();
 
             try
             {
 
-                this.categoriesRepositry.DeleteCategory(dtoRemove.CategoryID);
+                this.categoriesRepositry.DeleteCategory(Id);
 
                 result.Message = "Cliente eliminado satisfactoriamente";
             }

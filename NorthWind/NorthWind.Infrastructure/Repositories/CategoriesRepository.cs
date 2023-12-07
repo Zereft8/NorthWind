@@ -1,6 +1,7 @@
 ﻿using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -37,18 +38,41 @@ namespace NorthWind.Infrastructure.Repositories
             var category = this.context.Categories.Find(Id);
             if(category != null)
                 this.context.Categories.Remove(category);
-            await this.context.SaveChangesAsync();
+            try
+            {
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al guardar cambios: {ex.Message}");
+            }
             return true;
         }
 
         public void Save(Categories entity)
         {
             this.context.Categories.Add(entity);
+            try
+            {
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al guardar cambios: {ex.Message}");
+            }
         }
 
         public void Update(Categories entity)
         {
             this.context.Categories.Update(entity);
+            try
+            {
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al guardar cambios: {ex.Message}");
+            }
         }
     }
 }

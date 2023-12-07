@@ -77,9 +77,9 @@ namespace NorthWind.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteCategory([FromBody] DeleteCategory deleteCategory)
+        public IActionResult DeleteCategory(int id)
         {
-            var result = this.categoryService.Remove(deleteCategory);
+            var result = this.categoryService.Remove(id);
 
             if (!result.Success)
             {

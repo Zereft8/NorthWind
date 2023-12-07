@@ -37,9 +37,29 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {  id = item.CategoryID  }) |
                     @Html.ActionLink("Details", "Details", new { id = item.CategoryID })
-
+                    <button class="btn btn-link" onclick="deleteCategory(@item.CategoryID)">Delete</button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<script>
+    function deleteCategory(categoryId) {
+        if (confirm('¿Está seguro de que desea borrar esta categoría?')) {
+            // Enviar una solicitud DELETE al controlador
+            $.ajax({
+                url: '/Categories/Delete/' + categoryId,
+                type: 'DELETE',
+                success: function () {
+                    // Recargar la página o actualizar la lista de categorías
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Error al intentar borrar la categoría.');
+                }
+            });
+        }
+    }
+</script>
