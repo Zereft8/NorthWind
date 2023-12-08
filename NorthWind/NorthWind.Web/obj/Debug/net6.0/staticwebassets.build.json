@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "f9qTJ0lLvae9rzLJhWdtUbQSnWxTYj/ZrY3sNUmmb+w=",
+  "Hash": "8Ju3pH0Ao1kfA+GaKkxSe/cU+JTKOGIDkXtvtVEj/VU=",
   "Source": "NorthWind.Web",
   "BasePath": "_content/NorthWind.Web",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Elianny\\Source\\Repos\\Zereft8\\NorthWind\\NorthWind\\NorthWind.Api\\NorthWind.Api.csproj",
+      "Version": 2,
+      "Source": "NorthWind.Api",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "NorthWind.Web\\wwwroot",

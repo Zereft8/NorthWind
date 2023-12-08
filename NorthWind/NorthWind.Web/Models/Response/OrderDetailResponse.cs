@@ -2,6 +2,7 @@
 {
     public class OrderDetailResponse
     {
+        
        
         public bool success { get; set; }
         public string message { get; set; }

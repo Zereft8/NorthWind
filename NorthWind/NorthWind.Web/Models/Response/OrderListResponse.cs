@@ -3,7 +3,7 @@
     public class OrderListResponse
     {
         public bool success { get; set; }
-        public object message { get; set; }
+        public string message { get; set; }
         public List <OrderViewResult> data { get; set; }
     }
     public class OrderViewResult
@@ -14,7 +14,7 @@
         public DateTime? OrderDate { get; set; }
 
 
-        public DateTime RequiredDate { get; set; }
+        public DateTime ? RequiredDate { get; set; }
 
 
         public string? ShipName { get; set; }

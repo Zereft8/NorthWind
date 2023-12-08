@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<NorthWind.Web.Models.Response.OrderViewResult>
 
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Clientes</h1>
+<h1>Ordenes</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -33,31 +35,36 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
         {
             <tr>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.OrderDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RequiredDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ShipName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ShipAddress)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ShipCity)
-                </th>
+                    <td>
+                        @Html.DisplayFor(model => item.OrderDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.RequiredDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.ShipName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.ShipAddress)
+                    </td>
+                    <t>
+                        @Html.DisplayFor(model => item.ShipCity)
+                    </t>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {  id = item.OrderID  }) |
                     @Html.ActionLink("Details", "Details", new { id = item.OrderID })
 
                 </td>
             </tr>
+
+        }
+        
         }
     </tbody>
 </table>

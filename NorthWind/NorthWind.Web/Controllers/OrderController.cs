@@ -1,9 +1,9 @@
 ﻿
-using FluentAssertions.Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Exchange.WebServices.Data;
 using Newtonsoft.Json;
 using NorthWind.Application.Contracts;
+using NorthWind.Application.Core;
 using NorthWind.Application.Dtos.Orders;
 using NorthWind.Web.Models.Response;
 
@@ -13,7 +13,8 @@ namespace NorthWind.Web.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService orderService;
-        private HttpMessageHandler clientHandle;
+        HttpClientHandler clientHandle = new HttpClientHandler();
+        
 
         public OrderController(IOrderService orderService)
 
@@ -26,9 +27,10 @@ namespace NorthWind.Web.Controllers
         {
             OrderListResponse orderList = new OrderListResponse();
 
-            using (var client = new HttpClient(this.clientHandle))
+            using (var client = new HttpClient())
             {
-                using (var response = client.GetAsync("http://localhost:5130/api/Orders/GetOrder").Result)
+                // Realizar la solicitud GET a la API
+                using (var response = client.GetAsync("http://localhost:5130/api/Orders").Result)
                 {
                     if (response.IsSuccessStatusCode)
                     {
@@ -38,21 +40,18 @@ namespace NorthWind.Web.Controllers
                         if (!orderList.success)
                         {
                             ViewBag.Message = orderList.message;
-
                             return View();
-
                         }
                     }
                     else
                     {
-                        orderList.message = "Error conectandose a la api";
+                        orderList.message = "Error conectándose a la API";
                         orderList.success = false;
                         ViewBag.Message = orderList.message;
-
-
                     }
                 }
             }
+
             return View(orderList.data);
         }
 
@@ -72,18 +71,20 @@ namespace NorthWind.Web.Controllers
                         string apiResponse = response.Content.ReadAsStringAsync().Result;
                         orderDetail = JsonConvert.DeserializeObject<OrderDetailResponse>(apiResponse);
 
-                       
+                        if (!orderDetail.success)
+                        {
+
+                            ViewBag.Message = orderDetail.message;
+                        }
                 }
             }
            
         }
-            var result = this.orderService.GetById(id);
-            if (!result.Success)
-            {
-                ViewBag.Message = result.Message;
-            }
+           
             return View(orderDetail.data);
     }
+       
+
 
         // GET: OrderController/Create
         public ActionResult Create()

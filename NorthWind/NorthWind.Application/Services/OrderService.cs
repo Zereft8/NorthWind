@@ -1,40 +1,34 @@
-﻿using System;
-using System.Linq;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using NorthWind.Application.Contracts;
 using NorthWind.Application.Core;
 using NorthWind.Application.Dtos.Orders;
 using NorthWind.Domain.Entities;
 using NorthWind.Infrastructure.Interfaces;
+using System;
 
 namespace NorthWind.Application.Services
 {
     public class OrderService : IOrderService
     {
-        
         private readonly IOrdersRepository ordersRepository;
         private readonly ILogger<OrderService> logger;
 
-        public OrderService(IOrdersRepository ordersRepository,
-                                   ILogger<OrderService>logger)
+        public OrderService(IOrdersRepository ordersRepository, ILogger<OrderService> logger)
         {
             this.ordersRepository = ordersRepository;
             this.logger = logger;
         }
+
         public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
             try
             {
                 result.Data = this.ordersRepository.GetOrders();
-
             }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error obteniendo las ordenes.";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-
+                HandleError(result, ex);
             }
             return result;
         }
@@ -45,17 +39,20 @@ namespace NorthWind.Application.Services
 
             try
             {
+                if (OrderID <= 0)
+                {
+                    result.Success = false;
+                    result.Message = "OrderID debe ser un número positivo.";
+                    return result;
+                }
+
                 result.Data = this.ordersRepository.GetOrderById(OrderID);
             }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error obteniendo las ordenes.";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-
+                HandleError(result, ex);
             }
             return result;
-
         }
 
         public ServiceResult Remove(OrderDtoRemove dtoRemove)
@@ -64,25 +61,22 @@ namespace NorthWind.Application.Services
 
             try
             {
+                ValidateDtoRemove(dtoRemove);
+
                 Orders orders = new Orders()
                 {
                     OrderID = dtoRemove.OrderID,
                     Eliminado = dtoRemove.Eliminado,
                     IdUsuarioElimino = dtoRemove.IdUsuarioElimino,
                     FechaElimino = dtoRemove.FechaElimino,
-
-
-
                 };
+
                 this.ordersRepository.Remove(orders);
                 result.Message = "La orden fue removida correctamente";
             }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error obteniendo las ordenes.";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-
+                HandleError(result, ex);
             }
 
             return result;
@@ -94,24 +88,21 @@ namespace NorthWind.Application.Services
 
             try
             {
+                ValidateDtoAdd(dtoAdd);
+
                 Orders orders = new Orders()
                 {
                     RequiredDate = (DateTime)dtoAdd.RequiredDate,
                     OrderDate = dtoAdd.OrderDate
-
-
                 };
+
                 this.ordersRepository.Save(orders);
 
                 result.Message = "La orden fue guardada correctamente";
-
-         }
+            }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error obteniendo las ordenes.";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-
+                HandleError(result, ex);
             }
 
             return result;
@@ -122,30 +113,67 @@ namespace NorthWind.Application.Services
             ServiceResult result = new ServiceResult();
 
             try
-
-                //Validaciones
-
             {
+                ValidateDtoUpdate(dtoUpdate);
+
                 Orders orders = new Orders()
                 {
                     RequiredDate = (DateTime)dtoUpdate.RequiredDate,
-                  
-
+                    // Otros campos...
                 };
+
                 this.ordersRepository.Update(orders);
 
-                result.Message = "La orden fue actualizado correctamente";
-
-         }
+                result.Message = "La orden fue actualizada correctamente";
+            }
             catch (Exception ex)
             {
-                result.Success = false;
-                result.Message = $"Error obteniendo las ordenes.";
-                this.logger.LogError($"{result.Message}", ex.ToString());
-
+                HandleError(result, ex);
             }
 
             return result;
+        }
+
+        private void HandleError(ServiceResult result, Exception ex)
+        {
+            result.Success = false;
+            result.Message = $"Error obteniendo las ordenes.";
+            this.logger.LogError($"{result.Message}", ex.ToString());
+        }
+
+        private void ValidateDtoRemove(OrderDtoRemove dtoRemove)
+        {
+            if (dtoRemove == null)
+            {
+                throw new ApplicationException("El objeto dtoRemove no puede ser nulo.");
+            }
+
+            if (dtoRemove.OrderID <= 0)
+            {
+                throw new ApplicationException("OrderID debe ser un número positivo.");
+            }
+
+            
+        }
+
+        private void ValidateDtoAdd(OrderDtoAdd dtoAdd)
+        {
+            if (dtoAdd == null)
+            {
+                throw new ApplicationException("El objeto dtoAdd no puede ser nulo.");
+            }
+
+            
+        }
+
+        private void ValidateDtoUpdate(OrderDtoUpdate dtoUpdate)
+        {
+            if (dtoUpdate == null)
+            {
+                throw new ApplicationException("El objeto dtoUpdate no puede ser nulo.");
+            }
+
+           
         }
     }
 }
