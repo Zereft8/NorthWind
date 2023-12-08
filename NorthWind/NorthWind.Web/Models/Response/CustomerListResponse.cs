@@ -3,7 +3,7 @@
     public class CustomerListResponse
     {
         public bool success { get; set; }
-        public object message { get; set; }
+        public string message { get; set; }
         public List<CustomerViewResult> data { get; set; }
     }
 

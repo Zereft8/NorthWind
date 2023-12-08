@@ -1,10 +1,9 @@
-﻿
-
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using NorthWind.Application.Contracts;
 using NorthWind.Application.Services;
 using NorthWind.Infrastructure.Interfaces;
 using NorthWind.Infrastructure.Repositories;
+
 
 namespace NorthWind.Ioc.Dependencies
 {
@@ -14,6 +13,7 @@ namespace NorthWind.Ioc.Dependencies
         {
             service.AddScoped<ICustomersRepository, CustomersRepository>();
             service.AddTransient<ICustomerService, CustomerService>();
+
         }
     }
 }

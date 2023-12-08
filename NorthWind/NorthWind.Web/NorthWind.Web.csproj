@@ -11,4 +11,8 @@
     <ProjectReference Include="..\NorthWind.Ioc\NorthWind.Ioc.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Request\" />
+  </ItemGroup>
+
 </Project>

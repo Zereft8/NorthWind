@@ -3,6 +3,7 @@ using NorthWind.Infrastructure.Context;
 using NorthWind.Infrastructure.Interfaces;
 using NorthWind.Infrastructure.Repositories;
 using NorthWind.Ioc.Dependencies;
+using NorthWind.Web.Dependencies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddDbContext<NorthWindContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NorthWindContext")));
-    
+
 builder.Services.AddCustomerDependency();
 
+builder.Services.AddCustomerDependencyApi();
+
+builder.Services.AddHttpClient();
 
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 

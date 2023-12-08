@@ -1,88 +1,56 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using NorthWind.Application.Contracts;
-using NorthWind.Application.Core;
+﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.Application.Dtos.Customer;
 using NorthWind.Web.Models.Response;
+using NorthWind.Web.WebService.Interface;
 
 namespace NorthWind.Web.Controllers
 {
     public class CustomerController : Controller
     {
 
-        private readonly ICustomerService customerService;
+        private readonly ICustomerApiService customerApi;
+        private readonly ILogger<CustomerController> logger;
+        private readonly IConfiguration configuration;
 
-        HttpClientHandler clientHandler = new HttpClientHandler();
 
-        public CustomerController(ICustomerService customerService)
+        public CustomerController(ICustomerApiService customerApi, 
+            ILogger<CustomerController> logger, IConfiguration configuration)
         {
-            this.customerService = customerService;
+            this.customerApi = customerApi;
+            this.logger = logger;
+            this.configuration = configuration;
+
         }
 
+
+
         // GET: CustomerWithHttpClientController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
 
             CustomerListResponse customerList = new CustomerListResponse();
 
-            using(var client = new HttpClient(this.clientHandler)) 
+            customerList = await this.customerApi.GetCustomers();
+
+            if (!customerList.success) 
             {
-                using (var response = client.GetAsync("http://localhost:5130/api/Customers/GetCustomers").Result) 
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        customerList = JsonConvert.DeserializeObject<CustomerListResponse>(apiResponse);
-
-                        if (!customerList.success)
-                        {
-                            ViewBag.Message = customerList.message;
-                            return View();
-                        }
-                    }
-                    else
-                    {
-                        customerList.message = "Error conectandose al Api.";
-                        customerList.success = false;
-                        ViewBag.Message = customerList.message;
-                    }
-                }
+                return View();
             }
 
             return View(customerList.data);
+
         }
 
         // GET: CustomerWithHttpClientController/Details/5
-        public ActionResult Details(string id)
+        public async Task<ActionResult> Details(string id)
         {
 
-            CustomerDetailResponse customerDetail = new CustomerDetailResponse();
+            CustomerDetailResponse customerDetailResponse = new CustomerDetailResponse();
 
+            customerDetailResponse = await this.customerApi.GetCustomer(id);
 
-            using (var client = new HttpClient(this.clientHandler))
-            {
+            return View(customerDetailResponse.data);
 
-                var url = $"http://localhost:5130/api/Customers/GetCustomerById?id={id}";
-
-                using (var response = client.GetAsync(url).Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        customerDetail = JsonConvert.DeserializeObject<CustomerDetailResponse>(apiResponse);
-
-                        if (!customerDetail.success)
-                        {
-                            ViewBag.Message = customerDetail.message;
-                        }
-                    }
-                }
-            }
-
-            return View(customerDetail.data);
         }
 
         // GET: CustomerWithHttpClientController/Create
@@ -94,138 +62,54 @@ namespace NorthWind.Web.Controllers
         // POST: CustomerWithHttpClientController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CustomerDtoAdd customerDtoAdd)
+        public async Task<ActionResult> Create(CustomerDtoAdd customerDtoAdd)
         {
 
             BaseResponse baseResponse = new BaseResponse();
 
-            try
-            {
-                using (var client = new HttpClient(this.clientHandler))
-                {
+            baseResponse = await this.customerApi.Save(customerDtoAdd);
 
-                    var url = $"http://localhost:5130/api/Customers/SaveCustomer";
-
-                    customerDtoAdd.ChangeDate = DateTime.Now;
-                    customerDtoAdd.ChangeUser = 1;
-
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(customerDtoAdd), System.Text.Encoding.UTF8, "application/json");
-
-                    using (var response = client.PostAsync(url, content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                            baseResponse = JsonConvert.DeserializeObject<BaseResponse>(apiResponse);
-
-                            if (!baseResponse.success)
-                            {
-                                ViewBag.Message = baseResponse.message;
-                                return View();
-                            }
-                        }
-                        else
-                        {
-                            baseResponse.message = "Error conectandose al Api.";
-                            baseResponse.success = false;
-                            ViewBag.Message = baseResponse.message;
-                            return View();
-                        }
-                    }
-                }
-
-                return RedirectToAction(nameof(Index));
-
-            }
-            catch
+            if (!baseResponse.success)
             {
                 ViewBag.Message = baseResponse.message;
                 return View();
             }
+
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: CustomerWithHttpClientController/Edit/5
-        public ActionResult Edit(string id)
+        public async Task<ActionResult> Edit(string id)
         {
 
             CustomerDetailResponse customerDetail = new CustomerDetailResponse();
 
-
-            using (var client = new HttpClient(this.clientHandler))
-            {
-
-                var url = $"http://localhost:5130/api/Customers/GetCustomerById?id={id}";
-
-                using (var response = client.GetAsync(url).Result)
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                        customerDetail = JsonConvert.DeserializeObject<CustomerDetailResponse>(apiResponse);
-
-                        if (!customerDetail.success)
-                        {
-                            ViewBag.Message = customerDetail.message;
-                        }
-                    }
-                }
-            }
+            customerDetail = await this.customerApi.Edit(id);
 
             return View(customerDetail.data);
+
+
         }
 
         // POST: CustomerWithHttpClientController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CustomerDtoUpdate customerDtoUpdate)
+        public async Task<ActionResult> Edit(CustomerDtoUpdate customerDtoUpdate)
         {
 
             BaseResponse baseResponse = new BaseResponse();
 
-            try
-            {
+            baseResponse = await this.customerApi.Update(customerDtoUpdate);
 
-                using (var client = new HttpClient(this.clientHandler))
-                {
-
-                    var url = $"http://localhost:5130/api/Customers/UpdateCustomer";
-
-                    customerDtoUpdate.ChangeDate = DateTime.Now;
-                    customerDtoUpdate.ChangeUser = 1;
-
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(customerDtoUpdate), System.Text.Encoding.UTF8,"application/json");
-
-                    using (var response = client.PostAsync(url, content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-
-                            baseResponse = JsonConvert.DeserializeObject<BaseResponse>(apiResponse);
-
-                            if (!baseResponse.success)
-                            {
-                                ViewBag.Message = baseResponse.message;
-                                return View();
-                            }
-                        }
-                        else
-                        {
-                            ViewBag.Message = baseResponse.message;
-                            return View();
-                        }
-                    }
-                }
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+            if (!baseResponse.success)
             {
                 ViewBag.Message = baseResponse.message;
                 return View();
             }
+
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: CustomerWithHttpClientController/Delete/5
