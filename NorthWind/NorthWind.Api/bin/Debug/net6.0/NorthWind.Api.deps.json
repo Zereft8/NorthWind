@@ -11,6 +11,7 @@
           "NorthWind.Application": "1.0.0",
           "NorthWind.Infrastructure": "1.0.0",
           "NorthWind.Ioc": "1.0.0",
+          "NorthWind.Web": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -1013,6 +1014,15 @@
         "runtime": {
           "NorthWind.Ioc.dll": {}
         }
+      },
+      "NorthWind.Web/1.0.0": {
+        "dependencies": {
+          "NorthWind.Application": "1.0.0",
+          "NorthWind.Ioc": "1.0.0"
+        },
+        "runtime": {
+          "NorthWind.Web.dll": {}
+        }
       }
     }
   },
@@ -1766,6 +1776,11 @@
       "sha512": ""
     },
     "NorthWind.Ioc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NorthWind.Web/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

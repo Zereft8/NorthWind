@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NorthWind.Application\NorthWind.Application.csproj" />
+    <ProjectReference Include="..\NorthWind.Ioc\NorthWind.Ioc.csproj" />
+  </ItemGroup>
+
 </Project>

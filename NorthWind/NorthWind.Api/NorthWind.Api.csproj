@@ -14,6 +14,11 @@
     <ProjectReference Include="..\NorthWind.Application\NorthWind.Application.csproj" />
     <ProjectReference Include="..\NorthWind.Infrastructure\NorthWind.Infrastructure.csproj" />
     <ProjectReference Include="..\NorthWind.Ioc\NorthWind.Ioc.csproj" />
+    <ProjectReference Include="..\NorthWind.Web\NorthWind.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\SuppliersWithHttpClient\" />
   </ItemGroup>
 
 </Project>

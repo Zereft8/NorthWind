@@ -1,0 +1,62 @@
+﻿@model IEnumerable<NorthWind.Web.Models.Responses.SupplierViewResult>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Suplidores</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.companyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phone)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id = item.supplierID  }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.supplierID })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

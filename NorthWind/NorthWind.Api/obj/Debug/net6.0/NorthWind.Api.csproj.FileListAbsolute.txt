@@ -97,3 +97,10 @@ C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\N
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.dll
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Application.pdb
 C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Ioc.pdb
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.deps.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.runtimeconfig.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.staticwebassets.runtime.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.exe
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Api.staticwebassets.runtime.json
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.dll
+C:\Users\theka\source\repos\NorthWind\NorthWind\NorthWind.Api\bin\Debug\net6.0\NorthWind.Web.pdb

@@ -4,6 +4,257 @@
     "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {}
   },
   "projects": {
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
+        "projectName": "NorthWind.Application",
+        "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj",
+        "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+        "projectName": "NorthWind.Domain",
+        "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj",
+        "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj",
+        "projectName": "NorthWind.Infrastructure",
+        "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Domain\\NorthWind.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj",
+        "projectName": "NorthWind.Ioc",
+        "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj",
+        "packagesPath": "C:\\Users\\theka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\theka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj"
+              },
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Infrastructure\\NorthWind.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +278,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Application\\NorthWind.Application.csproj"
+              },
+              "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj": {
+                "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

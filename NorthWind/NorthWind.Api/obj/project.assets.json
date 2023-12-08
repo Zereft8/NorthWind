@@ -1831,6 +1831,23 @@
         "runtime": {
           "bin/placeholder/NorthWind.Ioc.dll": {}
         }
+      },
+      "NorthWind.Web/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "NorthWind.Application": "1.0.0",
+          "NorthWind.Ioc": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NorthWind.Web.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NorthWind.Web.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6152,6 +6169,11 @@
       "type": "project",
       "path": "../NorthWind.Ioc/NorthWind.Ioc.csproj",
       "msbuildProject": "../NorthWind.Ioc/NorthWind.Ioc.csproj"
+    },
+    "NorthWind.Web/1.0.0": {
+      "type": "project",
+      "path": "../NorthWind.Web/NorthWind.Web.csproj",
+      "msbuildProject": "../NorthWind.Web/NorthWind.Web.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6159,6 +6181,7 @@
       "NorthWind.Application >= 1.0.0",
       "NorthWind.Infrastructure >= 1.0.0",
       "NorthWind.Ioc >= 1.0.0",
+      "NorthWind.Web >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -6197,6 +6220,9 @@
             },
             "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj": {
               "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Ioc\\NorthWind.Ioc.csproj"
+            },
+            "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj": {
+              "projectPath": "C:\\Users\\theka\\source\\repos\\NorthWind\\NorthWind\\NorthWind.Web\\NorthWind.Web.csproj"
             }
           }
         }

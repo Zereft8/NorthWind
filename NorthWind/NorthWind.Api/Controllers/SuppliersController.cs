@@ -58,7 +58,7 @@ namespace NorthWind.Api.Controllers
         }
 
         // PUT api/<SuppliersController>/5
-        [HttpPut("UpdateSupplier")]
+        [HttpPost("UpdateSupplier")]
         public IActionResult Post([FromBody] SupplierDtoUpdate updateSuppliers)
         {
             var result = this.suppliersService.Update(updateSuppliers);
@@ -70,7 +70,7 @@ namespace NorthWind.Api.Controllers
         }
 
         // DELETE api/<SuppliersController>/5
-        [HttpPut("DeleteSupplier")]
+        [HttpPost("DeleteSupplier")]
         public IActionResult Post([FromBody] SupplierDtoRemove supplierDtoRemove)
         {
             var result = this.suppliersService.Remove(supplierDtoRemove);
